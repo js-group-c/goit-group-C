@@ -1,1 +1,59 @@
-
+:root {
+    --black: #121212;
+    --gray: #1d1d1d;
+    --brown: #bea69e;
+    --white: #ffffff;
+    --white05opacity: rgba(255, 255, 255, 0.5);
+    --dmsans: "DM Sans", sans-serif;
+    --linear-gradiant: linear-gradient(180deg, #060707 0%, #1d1d1d 100%);
+  }
+  /* Reset css */
+  html {
+    box-sizing: border-box;
+    font-family: var(--dmsans);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+  button {
+    cursor: pointer;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  address {
+    font-style: normal;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  body {
+    background-color: var(--white);
+  }
+    @import url('./all-categories.css');
+    @import url('./container.css');
+    @import url('./header.css');
+    @import url('./main-page.css');
+    @import url('./modal.css');
+    @import url('./shopping-page.css');
+    @import url('./sign-up.css');
+    @import url('./support-ukr.css');
