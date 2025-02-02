@@ -6,37 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoIT Bookshelf Javascript Project</title>
     <script type="module" crossorigin src="/vanilla-app-template/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/index-D-IENg8h.css">
+    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/index-DUnKup6j.css">
   </head>
   <body>
   <!-- Loads the specified .html file -->
     
 <header class="header">
   <div class="container">
-    <nav class="nav">
+      <div class="left-container">
       <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
+        <svg class="nav-logo-icon" width="24" height="24">
           <use href="../img/header-logo.svg#bookshelf"></use>
         </svg>
       </a>
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
+      <a class="nav-logo-txt" href="./index.html" aria-label="Site logo">
+        <svg class="nav-logo-txt" width="77" height="20">
           <use href="../img/bookshelf-txt.svg#txtBookShelf"></use>
         </svg>
       </a>
-      <h1>Header</h1>
+    </div>
+    <div class="right-container">
+      <a class="switcher-2" href="./index.html" >
+        <svg class="swicther-2-svg" width="44" height="24">
+          <use href="../img/Switcher-2@2x.svg#switcher2"></use>
+        </svg>
+      </a>
+      <a class="hmbrgr" >
+        <svg class="hmbrgr-menu" width="28" height="28">
+          <use href="../img/align-left.svg#hmbrgr-menu"></use>
+        </svg>
+      </a>
+      
+        <a class="nav-link" href="./sign-up.html">
+          <svg class="sign-up btn-sign-up" width="184" height="48">
+            <use href="../img/btn_signup.svg#signup"></use>
+          </svg>
+        </a>
+      
+    </div>
+  </div>
+  <div class="center">
+      
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./main-page.html">Home</a>
+          <a class="nav-link home" href="./main-page.html">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./shopping-page.html">Shopping List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./sign-up.html">Sign up</a>
+          <a class="nav-link shopping-list" href="./shopping-page.html">SHOPPING LIST</a>
+          <svg class="lock-02" width="20" height="20">
+            <use href="../img/uil_cart.svg#uil_cart"></use>
+          </svg>
+        
         </li>
       </ul>
-    </nav>
+    
   </div>
 </header>
 
