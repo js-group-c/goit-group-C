@@ -1,4 +1,5 @@
 import { getTopList, getBooksByCategory } from './booksAPI.js';
+import { onOpenModal } from './modal.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
 
 
@@ -10,10 +11,8 @@ const references = {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.addEventListener('click', clickSeeMore);
-  document.addEventListener('click', clickByBook);
-  document.addEventListener('click', clickByAllCategory);
-  window.addEventListener('scroll', scrollHandler);
+  document.addEventListener('click', clickSeeMore);   //See More butonuna tıklanınca ilgili kategoriye ait kitapları gösterir.
+  document.addEventListener('click', clickByBook);   //Bir kitap kartına tıklanınca detaylarını gösteren modal açar. 
 });
 
 
@@ -64,3 +63,11 @@ function renderBooks(books) {
   i++;
   return bookHtml;
 }
+
+
+const clickByBook = function (event) {
+    if (event.target.classList.contains("top_list-book_cover_wrapper")) {
+        const bookId = event.target.dataset.bookid;
+        onOpenModal(bookId);   //kitap ID' si ile birlikte modal açma fonksiyonunu çalıştırır.
+    }
+};
