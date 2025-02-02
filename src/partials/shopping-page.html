@@ -1,1 +1,46 @@
-<h3>Shopping page</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/shopping-page.css" />
+</head>
+<body>
+    <load src="./partials/header.html"/>
+    
+    <main class="shopping-list-container">
+        <!-- Sol taraf: Hayır kurumları listesi -->
+        <section class="charity-section">
+            <load src="./partials/support-ukr.html"/>
+        </section>
+        
+        <!-- Sağ taraf: Kullanıcının eklediği kitaplar -->
+        <section class="books-section">
+            <h1 class="shopping-list-title">Shopping <span>List</span></h1>
+            
+            <div class="books-container" id="books-container">
+                <!-- Kitap kartları burada dinamik olarak eklenecek -->
+            </div>
+            
+            <div class="empty-list">
+                <p class="empty-text">
+                  This page is empty, add some books and proceed to order.
+                </p>
+                <img src="../img/empty-list.png" alt="Empty shopping list" class="empty-image" />
+              </div>
+              
+            
+            <!-- Sayfalama bölümü -->
+            <div class="pagination">
+                <button class="page-btn prev">&laquo;</button>
+                <span class="page-numbers"></span>
+                <button class="page-btn next">&raquo;</button>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../js/shopping.js"></script>
+</body>
+</html>
