@@ -1,6 +1,17 @@
+@import url('./all-categories.css');
+@import url('./container.css');
+@import url('./header.css');
+@import url('./main-page.css');
+@import url('./modal.css');
+@import url('./shopping-page.css');
+@import url('./sign-up.css');
+@import url('./support-ukr.css');
+
 :root {
-    --black: #121212;
-    --gray: #1d1d1d;
+    --black: #111111;
+    --black1: #202024;
+    --violet: #4f2ee8;
+    --yellow: #eac645;
     --brown: #bea69e;
     --white: #ffffff;
     --white05opacity: rgba(255, 255, 255, 0.5);
@@ -49,11 +60,4 @@
   body {
     background-color: var(--white);
   }
-    @import url('./all-categories.css');
-    @import url('./container.css');
-    @import url('./header.css');
-    @import url('./main-page.css');
-    @import url('./modal.css');
-    @import url('./shopping-page.css');
-    @import url('./sign-up.css');
-    @import url('./support-ukr.css');
+
