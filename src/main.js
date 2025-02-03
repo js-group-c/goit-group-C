@@ -1,7 +1,7 @@
 import './js/all-categories.js';
 import './js/booksAPI.js';
 import './js/header.js';
-import './js/localStorage.js';
+import './js/local-storage.js';
 import './js/main-page.js';
 import './js/modal.js';
 import './js/shopping-page.js';
