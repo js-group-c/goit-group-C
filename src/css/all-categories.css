@@ -1,17 +1,31 @@
 /* Mobile */
-@media screen and (max-width: 374px) {
-
+@media screen and (max-width: 767px) {
+  div.div-cat {
+    width: 98%;
+    height: 228px;
+    top: 104px;
+    left: 20px;
+    gap: 20px;
+    opacity: 0px;
+    overflow: scroll;
+  }
+  ul.categories li.ctg {
+    font-family: var(--dmsans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 24px;
+  }
 }
 
 /* Tablet */
-@media screen and (min-width: 375px) and (max-width: 768px) {
-
+@media screen and (min-width: 768px) and (max-width: 1439px) {
 }
-
 
 /* Desktop */
-@media screen and (min-width: 769px) {
-
+@media screen and (min-width: 1440px) {
 }
-
-
