@@ -1,11 +1,15 @@
+
+
 @import url('./all-categories.css');
 @import url('./container.css');
-@import url('./header.css');
+/* @import url('./header.css'); */
+@import url('./header2.css');
 @import url('./main-page.css');
 @import url('./modal.css');
 @import url('./shopping-page.css');
 @import url('./sign-up.css');
 @import url('./support-ukr.css');
+
 
 :root {
     --black: #111111;
@@ -60,4 +64,5 @@
   body {
     background-color: var(--white);
   }
+  
 
