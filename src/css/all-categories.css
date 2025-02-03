@@ -9,7 +9,7 @@
     opacity: 0px;
     overflow: scroll;
   }
-  ul.categories li.ctg {
+  #categories li.ctg {
     font-family: var(--dmsans);
     font-size: 16px;
     font-weight: 400;
