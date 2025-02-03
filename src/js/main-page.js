@@ -1,7 +1,5 @@
-import { getTopList, getBooksByCategory } from './booksAPI.js';
-import { onOpenModal } from './modal.js';
+import { getTopBooks, getBooksByCategory } from './booksAPI.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
-
 
 const references = {
   topListElem: document.querySelector('#topList'),
@@ -9,18 +7,16 @@ const references = {
   titleElement: document.querySelector('.top_list-title'),
 };
 
-
 document.addEventListener('DOMContentLoaded', function () {
-  document.addEventListener('click', clickSeeMore);   //See More butonuna tıklanınca ilgili kategoriye ait kitapları gösterir.
-  document.addEventListener('click', clickByBook);   //Bir kitap kartına tıklanınca detaylarını gösteren modal açar. 
+  document.addEventListener('click', clickSeeMore); //See More butonuna tıklanınca ilgili kategoriye ait kitapları gösterir.
+  document.addEventListener('click', clickByBook); //Bir kitap kartına tıklanınca detaylarını gösteren modal açar.
 });
-
 
 //En Çok Satanlar Listesini Getirme
 document.addEventListener('DOMContentLoaded', async function () {
   spinnerPlay(references.titleElement);
   references.topListElem.innerHTML = '';
-  const topListData = getTopList();
+  const topListData = getTopBooks();
   const topList = await topListData;
   let html = '';
   topList.forEach(elem => {
@@ -29,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   references.topListElem.innerHTML = html;
   spinnerStop();
 });
-
 
 //En Çok Satanlar Listesini Renderleme
 function renderTopList(elem) {
@@ -42,11 +37,12 @@ function renderTopList(elem) {
         </li>`;
 }
 
-
 //Kitap kartlarının oluşturulması (kapak, başlık ve yazar ismi)
 function renderBooks(books) {
   let i = 1;
-  const bookHtml = books.map(book => `
+  const bookHtml = books
+    .map(
+      book => `
         <li class="top_list-card" data-book-sequence-number="${i++}">
             <div class="top_list-book_cover_wrapper" data-bookid="${
               book._id
@@ -54,20 +50,21 @@ function renderBooks(books) {
                 <img class="top_list-book_cover" src="${
                   book.book_image
                 }" alt="${book.title}">
-                <div class="quick-view-text">Quick view</div>
+                
             </div>
             <h3 class="top_list-book_title">${book.title}</h3>
             <p class="top_list-book_author">${book.author}</p>
         </li>
-        `).join('');
+        `
+    )
+    .join('');
   i++;
   return bookHtml;
 }
 
-
 const clickByBook = function (event) {
-    if (event.target.classList.contains("top_list-book_cover_wrapper")) {
-        const bookId = event.target.dataset.bookid;
-        onOpenModal(bookId);   //kitap ID' si ile birlikte modal açma fonksiyonunu çalıştırır.
-    }
+  if (event.target.classList.contains('top_list-book_cover_wrapper')) {
+    const bookId = event.target.dataset.bookid;
+    onOpenModal(bookId); //kitap ID' si ile birlikte modal açma fonksiyonunu çalıştırır.
+  }
 };
