@@ -202,7 +202,7 @@
       right: 0;
       background: var(--violet);
       z-index: 100;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
     }
@@ -221,6 +221,35 @@
     .top-form {
       display: flex;
       justify-content: flex-end;
+    }
+    .top-form .close-modal {
+      cursor: pointer;
+      padding: 24px 24px;
+      font-size: 14px;
+    }
+    .login-form form input {
+      width: 499px;
+      height: 64px;
+      padding: 20px 173px 20px 40px;
+      gap: 10px;
+      border-radius: 40px 40px 40px 40px;
+      border: 2px 2px 2px 2px;
+      opacity: 0px;
+      margin-bottom: 28px;
+      margin-left: 40px;
+    }
+    .login-form button {
+      width: 499px;
+      height: 64px;
+      padding: 20px 173px 20px 173px;
+      gap: 10px;
+      border-radius: 40px 40px 40px 40px;
+      opacity: 0px;
+      background: #111111;
+      color: #F3F3F3;
+      margin-left: 40px;
+      margin-bottom: 20px;
+      cursor: pointer;
     }
 }
 
