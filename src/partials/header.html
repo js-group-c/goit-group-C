@@ -1,7 +1,6 @@
-
 <header class="header">
   <div class="container">
-      <div class="left-container">
+    <div class="left-container">
       <a class="nav-logo" href="./index.html" aria-label="Site logo">
         <svg class="nav-logo-icon" width="24" height="24">
           <use href="../img/header-logo.svg#bookshelf"></use>
@@ -14,56 +13,69 @@
       </a>
     </div>
     <div class="center">
-      
       <ul class="nav-list">
         <li class="nav-item">
           <a class="nav-link home" href="./main-page.html">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link shopping-list" href="./shopping-page.html">SHOPPING LIST</a>
+          <a class="nav-link shopping-list" href="./shopping-page.html"
+            >SHOPPING LIST</a
+          >
           <svg class="lock-02" width="20" height="20">
             <use href="../img/uil_cart.svg#uil_cart"></use>
           </svg>
-        
         </li>
       </ul>
-    
-  </div>
+    </div>
     <div class="right-container">
-      <a class="switcher-2" href="./index.html" >
+      <a class="switcher-2" href="./index.html">
         <svg class="swicther-2-svg" width="44" height="24">
           <use href="../img/Switcher-2@2x.svg#switcher2"></use>
         </svg>
       </a>
-      <a class="hmbrgr" >
+      <a class="hmbrgr">
         <svg class="hmbrgr-menu" width="28" height="28">
           <use href="../img/align-left.svg#hmbrgr-menu"></use>
         </svg>
       </a>
-      
-        <a id="btn-sign-up" href="#" type="button">
-          <svg class="sign-up btn-sign-up" width="184" height="48">
-            <use href="../img/btn_signup.svg#signup"></use>
-          </svg>
-        </a>
-      
+
+      <a id="btn-sign-up" href="#" type="button">
+        <svg class="sign-up btn-sign-up" width="184" height="48">
+          <use href="../img/btn_signup.svg#signup"></use>
+        </svg>
+      </a>
     </div>
   </div>
   <div id="login-modal">
     <div class="modal">
       <div class="top-form">
-        <div class="close-modal">
-          &#10006;
-        </div>
+        <div class="close-modal">&#10006;</div>
       </div>
       <div class="login-form">
         <form action="">
-          <input type="text" class="form-control" placeholder="NAME" id="username">
-          <input type="email" class="form-control" placeholder="EMAIL" id="email">
-          <input type="password" class="form-control" placeholder="PASSWORD" id="password">
-          <button type="button" class="submit-button">SIGN UP</button>
-          <a>SIGN UP</a>
-          <a>SIGN IN</a>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="NAME"
+            id="username"
+          />
+          <input
+            type="email"
+            class="form-control"
+            placeholder="EMAIL"
+            id="email"
+          />
+          <input
+            type="password"
+            class="form-control"
+            placeholder="PASSWORD"
+            id="password"
+          />
+          <button type="button" class="submit-button" onclick="signUp()">SIGN UP</button>
+          <div class="modal-window">
+            <a>SIGN UP</a>
+            <a>SIGN IN</a>
+          </div>
         </form>
       </div>
     </div>
