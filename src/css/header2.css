@@ -60,6 +60,68 @@
   svg.hmbrgr-menu {
     margin-top: 0px;
   }
+  #login-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--violet);
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal {
+    background: #f6f6f6;
+    width: 80%;
+    height: 516px;
+    top: 127px;
+    left: 430px;
+    gap: 0px;
+    border-radius: 18px 18px 18px 18px;
+    border: 2px 2px 2px 2px;
+    opacity: 0px;
+    border: 2px solid #111111;
+  }
+  .top-form {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .top-form .close-modal {
+    cursor: pointer;
+    padding: 24px 24px;
+    font-size: 14px;
+  }
+  .login-form form input {
+    width: 80%;
+    height: 64px;
+    padding: 20px 173px 20px 40px;
+    gap: 10px;
+    border-radius: 40px 40px 40px 40px;
+    border: 2px 2px 2px 2px;
+    opacity: 0px;
+    margin-bottom: 28px;
+    margin-left: 40px;
+  }
+  .login-form button {
+    width: 80%;
+    height: 64px;
+    padding: 20px 173px 20px 40px;
+    gap: 10px;
+    border-radius: 40px 40px 40px 40px;
+    opacity: 0px;
+    background: #111111;
+    color: #f3f3f3;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  div.modal-window {
+    width: 153px;
+    height: 24px;
+    margin-left: auto;
+  }
 }
 
 /* Tablet */
@@ -375,5 +437,67 @@
   svg.lock-02 {
     position: relative;
     top: -25px;
+  }
+  #login-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--violet);
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal {
+    background: #f6f6f6;
+    width: 579px;
+    height: 516px;
+    top: 127px;
+    left: 430px;
+    gap: 0px;
+    border-radius: 18px 18px 18px 18px;
+    border: 2px 2px 2px 2px;
+    opacity: 0px;
+    border: 2px solid #111111;
+  }
+  .top-form {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .top-form .close-modal {
+    cursor: pointer;
+    padding: 24px 24px;
+    font-size: 14px;
+  }
+  .login-form form input {
+    width: 499px;
+    height: 64px;
+    padding: 20px 173px 20px 40px;
+    gap: 10px;
+    border-radius: 40px 40px 40px 40px;
+    border: 2px 2px 2px 2px;
+    opacity: 0px;
+    margin-bottom: 28px;
+    margin-left: 40px;
+  }
+  .login-form button {
+    width: 499px;
+    height: 64px;
+    padding: 20px 173px 20px 173px;
+    gap: 10px;
+    border-radius: 40px 40px 40px 40px;
+    opacity: 0px;
+    background: #111111;
+    color: #f3f3f3;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  div.modal-window {
+    width: 153px;
+    height: 24px;
+    margin-left: 231px;
   }
 }

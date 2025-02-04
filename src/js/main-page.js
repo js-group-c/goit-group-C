@@ -1,6 +1,6 @@
 import { getTopBooks, getBooksByCategory } from './booksAPI.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
-import { onOpenModal } from './modal.js';
+// import { onOpenModal } from './modal.js';
 //import {showNoBooksWarning } from './warnings.js';
 
 const references = {
