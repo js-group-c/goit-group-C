@@ -24,8 +24,50 @@
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
+  div.div-cat {
+    width: 49%;
+    height: 472px;
+    top: 112px;
+    left: 32px;
+    gap: 20px;
+    opacity: 0px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+  }
+  #categories li.ctg {
+    font-family: var(--dmsans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 24px;
+  }
 }
 
 /* Desktop */
 @media screen and (min-width: 1440px) {
+  div.div-cat {
+    width: 356px;
+    height: 472px;
+    top: 112px;
+    left: 24px;
+    gap: 20px;
+    opacity: 0px;
+    overflow: scroll;
+  }
+  #categories li.ctg {
+    font-family: var(--dmsans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 24px;
+  }
 }
