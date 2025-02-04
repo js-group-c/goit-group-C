@@ -194,6 +194,34 @@
         position: relative;
         top: -25px;
     }
+    #login-modal {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--violet);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal {
+      background: #F6F6F6;
+      width: 579px;
+      height: 516px;
+      top: 127px;
+      left: 430px;
+      gap: 0px;
+      border-radius: 18px 18px 18px 18px;
+      border: 2px 2px 2px 2px;
+      opacity: 0px;
+      border: 2px solid #111111;
+    }
+    .top-form {
+      display: flex;
+      justify-content: flex-end;
+    }
 }
 
 /* Desktop */
