@@ -1,5 +1,7 @@
 import { getTopBooks, getBooksByCategory } from './booksAPI.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
+import { onOpenModal } from './modal.js';
+//import {showNoBooksWarning } from './warnings.js';
 
 const references = {
   topListElem: document.querySelector('#topList'),
@@ -106,7 +108,6 @@ async function categoryList(category) {
           <li class="category_list-card">
               <div class="top_list-book_cover_wrapper" data-bookid="${book._id}">
                   <img class="top_list-book_cover" src="${book.book_image}" alt="${book.title}">
-                  <div class="quick-view-text">Quick view</div>
               </div>
               <h3 class="top_list-book_title">${book.title}</h3>
               <p class="top_list-book_author">${book.author}</p>
