@@ -124,6 +124,13 @@ li {
   .top_list-card {
     width: 218px;
   }
+  .top_list-title {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  .top_list-category_name {
+    line-height: 24px;
+  }
 }
 
 /* Desktop */
@@ -167,5 +174,15 @@ li {
     width: 180px;
     height: 70px;
     font-size: 14px;
+  }
+  main {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .books-container {
+    width: fit-content;
   }
 }

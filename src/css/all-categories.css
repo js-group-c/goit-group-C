@@ -25,7 +25,7 @@
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   div.div-cat {
-    width: 49%;
+    width: 98%;
     height: 472px;
     top: 112px;
     left: 32px;
