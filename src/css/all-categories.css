@@ -20,6 +20,12 @@
     text-decoration-skip-ink: none;
     margin-bottom: 24px;
   }
+
+  #categories li.ctg:hover {
+    cursor: pointer;
+    color: #4F2EE8;
+    text-transform: uppercase; /* Büyük harf yapmak için */
+  }
 }
 
 /* Tablet */
@@ -46,6 +52,12 @@
     text-decoration-skip-ink: none;
     margin-bottom: 24px;
   }
+
+  #categories li.ctg:hover {
+    cursor: pointer;
+    color: #4F2EE8;
+    text-transform: uppercase; /* Büyük harf yapmak için */
+  }
 }
 
 /* Desktop */
@@ -69,5 +81,11 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin-bottom: 24px;
+  }
+
+  #categories li.ctg:hover {
+    cursor: pointer;
+    color: #4F2EE8;
+    text-transform: uppercase; /* Büyük harf yapmak için */
   }
 }
