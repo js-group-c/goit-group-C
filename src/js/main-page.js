@@ -52,8 +52,12 @@ function renderBooks(books) {
       book => `
         <li class="top_list-card" data-book-sequence-number="${i++}">
             <div class="top_list-book_cover_wrapper" data-bookid="${book._id}">
-                <img class="top_list-book_cover" src="${book.book_image}" alt="${book.title}">
-            </div>
+                <img class="top_list-book_cover" src="${
+                  book.book_image
+                }" alt="${book.title}">
+            <p class="top_list-quick">QUICK VIEW</p>
+                </div>
+            
             <h3 class="top_list-book_title">${book.title}</h3>
             <p class="top_list-book_author">${book.author}</p>
         </li>
@@ -61,7 +65,7 @@ function renderBooks(books) {
     )
     .join('');
   i++;
-  return bookHtml; 
+  return bookHtml;
 }
 
 const clickByBook = function (event) {
@@ -72,15 +76,15 @@ const clickByBook = function (event) {
   }
 };
 
-const clickSeeMore = function (event) {  
-    if (event.target.classList.contains("top_list-see_more")) { 
-        references.topListElem.classList.add("hidden");   //Üst kısımdaki kitap listesi gizlenir.
-        references.categoryListElem.classList.remove("hidden");   //Kategorilerin bulunduğu liste alanı gösterilir.
-        const category = event.target.dataset.category;
-        titleCategory(category);   //Seçilen kategorinin başlığını değiştirir.
-        categoryList(category);   //Seçilen kategoriye ait kitapları getirip listeler.
-        allCategoriesActive(category);   //Seçilen kategoriyi aktif hale getirir. Görsel vurgulama ekler.
-    }
+const clickSeeMore = function (event) {
+  if (event.target.classList.contains('top_list-see_more')) {
+    references.topListElem.classList.add('hidden'); //Üst kısımdaki kitap listesi gizlenir.
+    references.categoryListElem.classList.remove('hidden'); //Kategorilerin bulunduğu liste alanı gösterilir.
+    const category = event.target.dataset.category;
+    titleCategory(category); //Seçilen kategorinin başlığını değiştirir.
+    categoryList(category); //Seçilen kategoriye ait kitapları getirip listeler.
+    allCategoriesActive(category); //Seçilen kategoriyi aktif hale getirir. Görsel vurgulama ekler.
+  }
 };
 
 const clickByAllCategories = async function (event) {
@@ -122,7 +126,8 @@ async function categoryList(category) {
     references.categoryListElem.innerHTML = html;
   } catch (error) {
     console.error('Kategori verisi alınırken hata oluştu:', error);
-    references.categoryListElem.innerHTML = '<p>Kitaplar yüklenirken bir hata oluştu.</p>';
+    references.categoryListElem.innerHTML =
+      '<p>Kitaplar yüklenirken bir hata oluştu.</p>';
   } finally {
     spinnerStop();
   }
@@ -130,7 +135,7 @@ async function categoryList(category) {
 
 //Seçilen kategori adını sayfa başlığı olarak gösterir.
 function titleCategory(category) {
-  references.titleElement.innerHTML = ''; 
+  references.titleElement.innerHTML = '';
 
   const words = category.split(' ');
   if (words.length === 1) {
@@ -150,26 +155,27 @@ function titleCategory(category) {
 
 //Sayfa en alta kaydırıldığında seçilen kategoriye ait kitap yoksa bu kategoride kitap bulunmamaktadır uyarısı verir.
 function scrollHandler() {
-    const allCategoriesButton = document.querySelector('.all_categories');
-    if (allCategoriesButton) {  
-        const allCatBtnPosition = allCategoriesButton.getBoundingClientRect();  //Butonun konumu alınır.
-        const windowHeight = window.innerHeight;   //Kullanıcının görünür pencere yükseliğini alır.
+  const allCategoriesButton = document.querySelector('.all_categories');
+  if (allCategoriesButton) {
+    const allCatBtnPosition = allCategoriesButton.getBoundingClientRect(); //Butonun konumu alınır.
+    const windowHeight = window.innerHeight; //Kullanıcının görünür pencere yükseliğini alır.
 
-        if (allCatBtnPosition.top < windowHeight &&
-            !noBooksAlertShow &&
-            references.topListElem.classList.contains('hidden')
-        ) {
-            showNoBooksAlert();
-            noBooksAlertShow = true;
-        }
+    if (
+      allCatBtnPosition.top < windowHeight &&
+      !noBooksAlertShow &&
+      references.topListElem.classList.contains('hidden')
+    ) {
+      showNoBooksAlert();
+      noBooksAlertShow = true;
     }
+  }
 }
 
 //Sayfanın en alta gelip gelmediğini kontrol eder ve uyarı mesajı gösterir.
 let scrollTimeout;
 
 function pageScrolledToBottom() {
-  return window.innerHeight + window.scrollY >= document.body.offsetHeight;  
+  return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 }
 
 window.addEventListener('scroll', function () {
