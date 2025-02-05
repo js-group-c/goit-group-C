@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(error =>
       console.error('Support-ukr yüklenirken hata oluştu:', error)
     );
-    fetchBooks();
 });
 
 const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
 async function fetchBooks() {
-  const booksContainer = document.getElementById('book-container');
+  const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
+  const booksContainer = document.getElementById('books-container');
   const emptyListMessage = document.querySelector('.empty-list');
 
   if (savedBooks.length === 0) {
@@ -66,7 +66,7 @@ async function fetchBooks() {
 document.addEventListener('DOMContentLoaded', fetchBooks);
 
 document
-  .getElementById('book-container')
+  .getElementById('books-container')
   .addEventListener('click', function (event) {
     if (event.target.classList.contains('delete-btn')) {
       const bookId = event.target.dataset.id;
