@@ -1,7 +1,7 @@
 import { getTopBooks, getBooksByCategory } from './booksAPI.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
 // import { onOpenModal } from './modal.js';
-//import {showNoBooksWarning } from './warnings.js';
+import { showNoBooksAlert } from './warnings.js';
 
 const references = {
   topListElem: document.querySelector('#topList'),
@@ -10,10 +10,13 @@ const references = {
   allCategoriesElement: document.querySelector('#categories'),
 };
 
+let noBooksAlertShow = false;
+
 document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', clickSeeMore); //See More butonuna tıklanınca ilgili kategoriye ait kitapları gösterir.
   document.addEventListener('click', clickByBook); //Bir kitap kartına tıklanınca detaylarını gösteren modal açar.
   document.addEventListener('click', clickByAllCategories); //Bir kategoriye tıklanınca bu kategorinin kitapları gösterir.
+  window.addEventListener('scroll', scrollHandler); //Sayfanın en altına kaydırıldığında kategorinin boş olup olmadığını kontrol eder.
 });
 
 //En Çok Satanlar Listesini Getirme
@@ -124,3 +127,57 @@ async function categoryList(category) {
     spinnerStop();
   }
 }
+
+//Seçilen kategori adını sayfa başlığı olarak gösterir.
+function titleCategory(category) {
+  references.titleElement.innerHTML = ''; 
+
+  const words = category.split(' ');
+  if (words.length === 1) {
+    references.titleElement.textContent = category;
+    return;
+  }
+
+  const lastWord = words.pop();
+  references.titleElement.textContent = words.join(' ');
+
+  const spanElement = document.createElement('span');
+  spanElement.textContent = ' ' + lastWord;
+  references.titleElement.appendChild(spanElement);
+}
+
+//function allCategoriesActive(category) {}
+
+//Sayfa en alta kaydırıldığında seçilen kategoriye ait kitap yoksa bu kategoride kitap bulunmamaktadır uyarısı verir.
+function scrollHandler() {
+    const allCategoriesButton = document.querySelector('.all_categories');
+    if (allCategoriesButton) {  
+        const allCatBtnPosition = allCategoriesButton.getBoundingClientRect();  //Butonun konumu alınır.
+        const windowHeight = window.innerHeight;   //Kullanıcının görünür pencere yükseliğini alır.
+
+        if (allCatBtnPosition.top < windowHeight &&
+            !noBooksAlertShow &&
+            references.topListElem.classList.contains('hidden')
+        ) {
+            showNoBooksAlert();
+            noBooksAlertShow = true;
+        }
+    }
+}
+
+//Sayfanın en alta gelip gelmediğini kontrol eder ve uyarı mesajı gösterir.
+let scrollTimeout;
+
+function pageScrolledToBottom() {
+  return window.innerHeight + window.scrollY >= document.body.offsetHeight;  
+}
+
+window.addEventListener('scroll', function () {
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout);
+  }
+
+  scrollTimeout = setTimeout(function () {
+    scrollHandler();
+  }, 300);
+});
