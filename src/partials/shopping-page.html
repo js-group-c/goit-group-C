@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping List</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/shopping-page.css" />
-</head>
-<body>
-    <load src="./header.html"/>
-    
-    <main class="shopping-list-container">
-        <section class="charity-section">
-            <load src="./support-ukr.html"/>
-        </section>
-        
-        <section class="books-section">
-            <h1 class="shopping-list-title">Shopping <span>List</span></h1>
-            
-            <div class="books-container" id="books-container">
-  
-            </div>
-            
-            <div class="empty-list">
-                <p class="empty-text">
-                  This page is empty, add some books and proceed to order.
-                </p>
-                <img src="../img/empty-list.png" alt="Empty shopping list" class="empty-image" />
-              </div>
-              
-            
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
 
-            <div class="pagination">
-                <button class="page-btn prev">&laquo;</button>
-                <span class="page-numbers"></span>
-                <button class="page-btn next">&raquo;</button>
-            </div>
-        </section>
+    <main class="shopping-list-container">
+      <section class="charity-section">
+        <div id="support-ukr-placeholder"></div>
+      </section>
+
+      <section class="books-section">
+        <h1 class="shopping-list-title">Shopping <span>List</span></h1>
+
+        <div class="books-container" id="books-container"></div>
+
+        <div class="empty-list">
+          <p class="empty-text">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <img
+            src="../img/empty-list.png"
+            alt="Empty shopping list"
+            class="empty-image"
+          />
+        </div>
+
+        <div class="pagination">
+          <button class="page-btn prev">&laquo;</button>
+          <span class="page-numbers"></span>
+          <button class="page-btn next">&raquo;</button>
+        </div>
+      </section>
     </main>
 
-    <script type="module" src="../js/shopping.js"></script>
-</body>
+    <script type="module" src="../js/shopping-page.js"></script>
+  </body>
 </html>
