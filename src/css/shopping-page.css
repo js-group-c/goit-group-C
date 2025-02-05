@@ -1,15 +1,188 @@
-/* Mobile */
-@media screen and (max-width: 374px) {
-
+.charity-section {
+  display: none;
 }
 
-/* Tablet */
-@media screen and (min-width: 375px) and (max-width: 768px) {
-
+.shopping-list-title {
+  font-family: DM Sans;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
+.shopping-list-title span {
+  color: #4f2ee8;
+}
 
-/* Desktop */
-@media screen and (min-width: 769px) {
+.empty-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  text-align: center;
+  padding: 20px;
+}
 
+.empty-text {
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #00000099;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.empty-image {
+  width: 150px;
+  height: auto;
+  align-items: center;
+}
+
+.book-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.book-image {
+  width: 60px;
+  height: 90px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.book-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.book-author {
+  font-size: 12px;
+  color: #777;
+}
+
+.book-actions {
+  display: flex;
+  align-items: center;
+}
+
+.trash-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.pagination {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.page-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: #000;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .shopping-list-title {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.04em;
+  }
+
+  .empty-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .empty-image {
+    width: 180px;
+  }
+
+  .book-card {
+    padding: 16px;
+  }
+
+  .book-title {
+    font-size: 16px;
+  }
+
+  .book-author {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shopping-list-container {
+    display: flex;
+    gap: 48px;
+  }
+
+  .shopping-list-title {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.04em;
+  }
+
+  .charity-section {
+    display: flex;
+  }
+
+  .empty-list {
+    align-items: center;
+  }
+
+  .empty-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .empty-image {
+    width: 200px;
+  }
+
+  .book-card {
+    padding: 20px;
+  }
+
+  .book-title {
+    font-size: 18px;
+  }
+
+  .book-author {
+    font-size: 16px;
+  }
 }
