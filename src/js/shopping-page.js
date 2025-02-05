@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(error =>
       console.error('Support-ukr yüklenirken hata oluştu:', error)
     );
+    fetchBooks();
 });
 
-const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
 async function fetchBooks() {
   const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
