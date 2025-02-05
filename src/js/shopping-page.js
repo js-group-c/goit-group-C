@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
 const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
 async function fetchBooks() {
-  const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
   const booksContainer = document.getElementById('.books-container');
   const emptyListMessage = document.querySelector('.empty-list');
 
