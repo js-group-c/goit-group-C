@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchBooks();
 });
 
+const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
 async function fetchBooks() {
-  const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
   const booksContainer = document.getElementById('book-container');
   const emptyListMessage = document.querySelector('.empty-list');
 
