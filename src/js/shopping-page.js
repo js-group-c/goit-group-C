@@ -1,26 +1,9 @@
-import { getBookById, getBookByIds } from './booksAPI.js';
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   // header.html'i yükle
-//   fetch('../partials/header.html')
-//     .then(response => response.text())
-//     .then(data => {
-//       document.getElementById('header-placeholder').innerHTML = data;
-//     })
-//     .catch(error => console.error('Header yüklenirken hata oluştu:', error));
-
-//   // support-ukr.html'i yükle
-//   fetch('../partials/support-ukr.html')
-//     .then(response => response.text())
-//     .then(data => {
-//       document.getElementById('support-ukr-placeholder').innerHTML = data;
-//     })
-//     .catch(error =>
-//       console.error('Support-ukr yüklenirken hata oluştu:', error)
-//     );
-// });
+import { getBookByIds } from './booksAPI.js';
 
 const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
+
+document.addEventListener('updateBooks', fetchBooks);
+
 
 async function fetchBooks() {
   const booksContainer = document.getElementById('book-container');
@@ -34,7 +17,16 @@ async function fetchBooks() {
     emptyListMessage.style.display = 'none'; // Boş liste mesajını gizle
   }
 
-  booksContainer.innerHTML = ''; // Önce kitapları temizleyelim
+  booksContainer.innerHTML = ''; // Önce kitapları temizle
+
+  // Geçersiz ID'leri filtrele
+  const validBookIds = savedBooks.filter(id => id !== null && id !== undefined && id !== '');
+
+  if (validBookIds.length === 0) {
+    emptyListMessage.style.display = 'block';
+    booksContainer.innerHTML = '';
+    return;
+  }
 
   try {
     const books = await getBookByIds(savedBooks); // API’den kitapları çek
@@ -43,6 +35,7 @@ async function fetchBooks() {
       const bookCard = document.createElement('div');
       bookCard.classList.add('book-card');
 
+      // Kitap bilgilerini card içerisine ekliyoruz
       bookCard.innerHTML = `
           <img src="${book.book_image}" alt="${book.title}" class="book-cover">
           <div class="book-info">
