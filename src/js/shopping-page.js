@@ -1,24 +1,24 @@
 import { getBookById, getBookByIds } from './booksAPI.js';
 
-document.addEventListener('DOMContentLoaded', function () {
-  // header.html'i yükle
-  fetch('../partials/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    })
-    .catch(error => console.error('Header yüklenirken hata oluştu:', error));
+// document.addEventListener('DOMContentLoaded', function () {
+//   // header.html'i yükle
+//   fetch('../partials/header.html')
+//     .then(response => response.text())
+//     .then(data => {
+//       document.getElementById('header-placeholder').innerHTML = data;
+//     })
+//     .catch(error => console.error('Header yüklenirken hata oluştu:', error));
 
-  // support-ukr.html'i yükle
-  fetch('../partials/support-ukr.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('support-ukr-placeholder').innerHTML = data;
-    })
-    .catch(error =>
-      console.error('Support-ukr yüklenirken hata oluştu:', error)
-    );
-});
+//   // support-ukr.html'i yükle
+//   fetch('../partials/support-ukr.html')
+//     .then(response => response.text())
+//     .then(data => {
+//       document.getElementById('support-ukr-placeholder').innerHTML = data;
+//     })
+//     .catch(error =>
+//       console.error('Support-ukr yüklenirken hata oluştu:', error)
+//     );
+// });
 
 const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
