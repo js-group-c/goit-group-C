@@ -72,7 +72,7 @@ const clickByBook = function (event) {
   const bookWrapper = event.target.closest('.top_list-book_cover_wrapper');
   if (bookWrapper) {
     const bookId = bookWrapper.dataset.bookid;
-    onOpenModal(bookId); //kitap ID' si ile birlikte modal açma fonksiyonunu çalıştırır.
+    onOpenModal(bookId); //Kitap ID' si ile birlikte modal açma fonksiyonunu çalıştırır.
   }
 };
 
@@ -88,16 +88,18 @@ const clickSeeMore = function (event) {
 };
 
 const clickByAllCategories = async function (event) {
-  if (event.target.classList.contains('all_categories')) {
+  if (event.target.classList.contains('all_categories')) { //All Kategories butonuna tıklandığında;
     references.titleElement.innerHTML = 'Best Sellers <span>Books</span>';
     references.categoryListElem.classList.add('hidden');
     references.topListElem.classList.remove('hidden');
     allCategoriesActive('All categories');
   }
-  if (event.target.classList.contains('link')) {
-    references.titleElement.innerHTML = 'Best Sellers <span>Books</span>';
-    references.categoryListElem.classList.add('hidden');
-    references.topListElem.classList.remove('hidden');
+  if (event.target.classList.contains('...')) { //Kategori listesine (bağlantısına) tıklandığında;
+    references.titleElement.innerHTML = category; //Başlığı kategori adı ile değiştirir.
+    references.categoryListElem.classList.remove('hidden');
+    references.topListElem.classList.add('hidden');
+    allCategoriesActive(category);
+    await categoryList(category); //Seçilen kategoriye ait kitapları getirir.
   }
 };
 
@@ -151,7 +153,18 @@ function titleCategory(category) {
   references.titleElement.appendChild(spanElement);
 }
 
-//function allCategoriesActive(category) {}
+//Seçilen kategori aktif olur.
+function allCategoriesActive(category) {
+  document.querySelectorAll('...'); // Tüm kategori bağlantılarını seçer.
+
+  references.allCategoriesElement.forEach(link => {
+    if (link.textContent.trim() === category) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
 
 //Sayfa en alta kaydırıldığında seçilen kategoriye ait kitap yoksa bu kategoride kitap bulunmamaktadır uyarısı verir.
 function scrollHandler() {
@@ -173,10 +186,6 @@ function scrollHandler() {
 
 //Sayfanın en alta gelip gelmediğini kontrol eder ve uyarı mesajı gösterir.
 let scrollTimeout;
-
-function pageScrolledToBottom() {
-  return window.innerHeight + window.scrollY >= document.body.offsetHeight;
-}
 
 window.addEventListener('scroll', function () {
   if (scrollTimeout) {
