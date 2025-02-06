@@ -40,7 +40,7 @@ async function fetchBooks() {
       const bookCard = document.createElement('div');
       bookCard.classList.add('book-card');
 
-      // Kitap bilgilerini card içerisine ekliyoruz
+      // BOOK CARD
       bookCard.innerHTML = `
           <img src="${book.book_image}" alt="${book.title}" class="book-cover">
           <div class="book-info">
