@@ -50,6 +50,7 @@ export async function onOpenModal(bookId) {
     }
     updateButtonState(bookId);
     modal.style.display = 'block';
+    document.body.style.overflow = "hidden"; // arka planın kaydırılmasını önleme
   } catch (error) {
     console.error('Kitap bilgileri yüklenirken hata oluştu:', error);
   }
@@ -103,12 +104,14 @@ removeFromShoppingList.addEventListener('click', () => {
 // Modalı kapatma işlemi
 closeModal.addEventListener('click', () => {
   modal.style.display = 'none';
+  document.body.style.overflow = "visible"; // kayırma işlevi tekrar aktif
 });
 
 // Modal dışında bir yere tıklanınca kapatma
 window.addEventListener('click', event => {
   if (event.target === modal) {
     modal.style.display = 'none';
+    document.body.style.overflow = "visible"; // kayırma işlevi tekrar aktif
   }
 });
 
@@ -116,5 +119,6 @@ window.addEventListener('click', event => {
 document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         modal.style.display = 'none';
+        document.body.style.overflow = "visible"; // kayırma işlevi tekrar aktif
     }
   });
