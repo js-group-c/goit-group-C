@@ -1,18 +1,140 @@
 /* Mobile */
 @media screen and (max-width: 374px) {
+
 }
 
 /* Tablet */
 @media screen and (min-width: 375px) and (max-width: 768px) {
+
+  .modalImage{
+    width: 287px;
+    height: 408px;
+  }
+  .modalBuyLinks li {
+    list-style-type: none;
+  }
+  .modalBuyLinks li a {
+    text-decoration: none;
+  }
+  .modalBuyLinks{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+
+  }
+ .modal {
+    position: fixed; /* Sayfadan bağımsız sabit konum */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Tam ortalama */
+    width:335px; /* Mobil uyumluluk için genişlik */
+    height: 806px;
+    /* max-width: 400px;  Maksimum genişlik */
+    background: white;
+    /* padding: 20px; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1000; /* Modalın diğer öğelerin üstünde olmasını sağlar */
+} 
+ 
+
+
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 335px;
+        height: 806px;
+    
+        text-align: center;
+        position: relative;
+        
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* margin-top: 40px; */
+        border-style: solid;
+      }
+
+
+      .modal-text-container {
+        width: 287px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      
+  .addToShoppingList,
+  .removeFromShoppingList {
+    display: block;
+    width: 270px;
+    height: 46px;
+    padding: 10px;
+    margin-top: 25px;
+    color: white;
+    cursor: pointer;
+    border-radius: 40px;
+    border: 2px;
+    border-color: #4f2eeb;
+    border-style: solid;
+    background-color: white;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    color: #111111;
+    
+  }
+  .feedback-div{
+    margin-top: 10px;
+  }
+  .feedback-text {
+    width: 242px;
+    height: 28px;
+    font-weight: 400px;
+    font-size: 8px;
+    line-height: 14px;
+    letter-spacing: -4%;
+    align-items: center;
+    color:#11111180;
+    opacity: 1;
+    
+    
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    color: #111111;
+  }
+  .modal-container {
+    
+   margin-top: 20px;
+  }
+  .modalDescription {
+    width: 300px; /* Genişlik sınırı */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* En fazla 4 satır */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #111111;
+  }
 }
+
 
 /* Desktop */
 @media screen and (min-width: 769px) {
-  /* Deneme style  */
-  /* 
 /* Modal Tasarımı Başlangıç  */
 
-  .modal {
+.modal {
     display: none; /* Başlangıçta gizli */
     position: fixed;
     z-index: 1000;
@@ -63,7 +185,11 @@
     top: 10px;
     right: 15px;
     font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
+    width: 14px;
+    height: 14px;
+    color: #111111;
   }
 
   .addToShoppingList,
@@ -156,8 +282,8 @@
     display: none;
   }
   /* Modal Tasarımı Bitiş  */
-}
-.feeback-text {
+
+.feedback-text {
   width: 324px;
   height: 28px;
   font-weight: 400px;
@@ -166,8 +292,11 @@
   letter-spacing: -4%;
   align-items: center;
   color:#11111180;
-  opacity: 0.5;
-
-
+  opacity: 1;
   
 }
+.feedback-div{
+  margin-top: 10px;
+}
+}
+
