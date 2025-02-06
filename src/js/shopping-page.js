@@ -3,6 +3,11 @@ import { getBookByIds } from './booksAPI.js';
 let savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
 let isFetching = false; // Fetch işleminin sadece bir kez yapılmasını sağlamak için kontrol değişkeni
 
+async function updateBookList() {
+  const booksContainer = document.getElementById('book-container');
+  const emptyListMessage = document.querySelector('.empty-list');
+  booksContainer.innerHTML = '';
+}
 // fetchBooks sadece bir kez çalışacak şekilde güncellendi
 async function fetchBooks() {
   if (isFetching) return; // Eğer zaten bir fetch işlemi yapılıyorsa, yeni bir fetch yapılmasın
@@ -21,10 +26,12 @@ async function fetchBooks() {
     emptyListMessage.style.display = 'none'; // Boş liste mesajını gizle
   }
 
-  booksContainer.innerHTML = ''; // Önce kitapları temizle
+  // booksContainer.innerHTML = ''; // Önce kitapları temizle
 
   // Geçersiz ID'leri filtrele
-  const validBookIds = savedBooks.filter(id => id !== null && id !== undefined && id !== '');
+  const validBookIds = savedBooks.filter(
+    id => id !== null && id !== undefined && id !== ''
+  );
 
   if (validBookIds.length === 0) {
     emptyListMessage.style.display = 'block';
@@ -47,7 +54,7 @@ async function fetchBooks() {
             <h3>${book.title}</h3>
             <p class="category">${book.list_name}</p>
             <p class="description">${book.description}</p>
-            <p class="author">By: ${book.author}</p>
+            <p class="author">${book.author}</p>
             <a href="${book.buy_links[0].url}" target="_blank" class="buy-button">Buy</a>
             <button class="delete-btn" data-id="${book._id}">🗑</button>
           </div>

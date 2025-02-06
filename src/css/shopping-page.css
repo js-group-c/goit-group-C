@@ -1,4 +1,4 @@
-.charity-section {
+.ctg-support-ukr {
   display: none;
 }
 
@@ -116,7 +116,32 @@
   color: #fff;
 }
 
+/*  */
+
+/* Kitap kartının genel stili */
+.book-card {
+  width: auto;
+  height: 170px;
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 48px;
+  border-radius: 16px;
+  opacity: 0px;
+  border: 2px solid #4F2EE866
+}
+
+.book-cover {
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
+  opacity: 0px;
+}
+
 @media (min-width: 768px) {
+  .book-card { 
+    margin-left: 32px;
+    margin-right: 32px;
+  }
   .shopping-list-title {
     font-size: 48px;
     line-height: 52px;
@@ -157,7 +182,7 @@
     letter-spacing: -0.04em;
   }
 
-  .charity-section {
+  .ctg-support-ukr {
     display: flex;
   }
 
