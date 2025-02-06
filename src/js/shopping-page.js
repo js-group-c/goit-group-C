@@ -55,7 +55,7 @@ async function fetchBooks() {
             <p class="category">${book.list_name}</p>
             <p class="description">${book.description}</p>
             <p class="author">${book.author}</p>
-            <a href="${book.buy_links[0].url}" target="_blank" class="buy-button">Buy</a>
+            <a href="${book.buy_links[0].url}" target="_blank" class="buy-button">Amazon</a>
             <button class="delete-btn" data-id="${book._id}">🗑</button>
           </div>
         `;
