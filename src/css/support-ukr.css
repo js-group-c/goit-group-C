@@ -32,12 +32,12 @@
     ol.support-list li {
         counter-increment: custom;
         
+        
     }
     ol.support-list li:before
     {
         content:"0" counter(custom) " "; 
-        position: relative;
-        top: -10px;  
+        
     }
 
     ol.support-list li:first-child {
@@ -46,14 +46,27 @@
     div.div-support {
         position: relative;
         top: 40px;
+        height: 292px;
     }
-    svg.block>use {
-        fill: #FFFFFF;
+    div.slider-div {
+        margin-top: 50px;
+        position: relative;
+        bottom: -20px;
+    }
+    img.block {
+        display: flex;
+        filter: brightness(0) invert(1);
+        
+        fill: var(--white);
+        position: relative;
+        top: -25px;
+        left: 25px;
         
     }
     ol.support-list li.last3 {
-        visibility: hidden;
+        display: none;
     }
+    
 }
 
 /* Tablet */
@@ -83,9 +96,11 @@
         margin-right: 12px;
 
     }
+    
     ol.support-list {
         color: var(--white);
         list-style: none;
+        
     }
     ol.support-list li {
         counter-increment: custom;

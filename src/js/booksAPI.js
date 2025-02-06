@@ -71,7 +71,9 @@ export async function getBookById(id) {
 export async function getBookByIds(idsArray) {
     try {
         const booksArray = [];
+
         for (let id of idsArray) {
+
             const url = `${BASE_URL}${END_POINTS[3]}/${id}`;
             const response = await axios.get(url);
             booksArray.push(response.data);
