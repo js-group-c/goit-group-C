@@ -17,6 +17,7 @@
 
   }
  .modal {
+  display: none; /* Başlangıçta gizli */
     position: fixed; /* Sayfadan bağımsız sabit konum */
     top: 50%;
     left: 50%;
@@ -143,6 +144,7 @@
 
   }
  .modal {
+  display: none; /* Başlangıçta gizli */
     position: fixed; /* Sayfadan bağımsız sabit konum */
     top: 50%;
     left: 50%;
