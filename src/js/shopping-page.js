@@ -1,11 +1,16 @@
+
 import { getBookByIds } from './booksAPI.js';
 
 const savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
 document.addEventListener('updateBooks', fetchBooks);
 
+// let hasFetched = false;
 
 async function fetchBooks() {
+  // if (hasFetched) return;  // Eğer daha önce çalıştıysa, tekrar çalıştırma
+  // hasFetched = true;  // Çalıştı olarak işaretle
+  console.log('fetchBooks çalıştı');
   const booksContainer = document.getElementById('book-container');
   const emptyListMessage = document.querySelector('.empty-list');
 
