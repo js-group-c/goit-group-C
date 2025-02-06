@@ -120,12 +120,26 @@
         position: relative;
         top: 40px;
     }
-    svg.block>use {
-        fill: #FFFFFF;
+    div.slider-div {
+        margin-top: 20px;
+        position:absolute;
+        top: 520px;
+    }
+    img.block {
+        display: flex;
+        filter: brightness(0) invert(1);
+        
+        fill: var(--white);
+        position: relative;
+        top: -25px;
+        left: 25px;
         
     }
     ol.support-list li.last3 {
-        visibility: hidden;
+        display: none;
+    }
+    img#slider {
+        margin-top: 10px;
     }
 }
 
@@ -179,11 +193,27 @@
         position: relative;
         top: 40px;
     }
-    svg.block>use {
-        fill: #FFFFFF;
+    div.slider-div {
+        margin-top: 20px;
+        position:absolute;
+        top: 1020px;
+    }
+    img.block {
+        display: flex;
+        filter: brightness(0) invert(1);
+        
+        fill: var(--white);
+        position: relative;
+        top: -25px;
+        left: 25px;
         
     }
     ol.support-list li.last3 {
-        visibility: hidden;
+        display: none;
+    }
+    img#slider {
+        margin-top: 10px;
+        position: relative;
+        bottom: 25px;
     }
 }
