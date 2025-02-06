@@ -34,16 +34,17 @@ function showHide3() {
     ind7.style.display = "flex";
     ind8.style.display = "flex";
     ind9.style.display = "flex";
+    var last3 = document.querySelectorAll("ol.support-list > li.last3 > a > img ");
+    last3.forEach(x=>x.style.position="relative");
+    last3.forEach(x=>x.style.top="0px");
     }
     else {
         var ind1 = document.querySelector("ol.support-list > li:nth-child(1)");
         var ind2 = document.querySelector("ol.support-list > li:nth-child(2)");
         var ind3 = document.querySelector("ol.support-list > li:nth-child(3)");
-        ind1.style.display = "flex";
-        ind1.style.position = "relative";
-        ind1.style.top = "-10px";
-        ind2.style.display = "flex";
-        ind3.style.display = "flex";
+        ind1.style.display = "";
+        ind2.style.display = "";
+        ind3.style.display = "";
         var ol = document.querySelector("ol.support-list");
         ol.style.counterSet = "custom 1";
         var ind7 = document.querySelector("ol.support-list > li:nth-child(7)");
