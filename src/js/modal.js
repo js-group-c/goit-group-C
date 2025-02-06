@@ -111,3 +111,10 @@ window.addEventListener('click', event => {
     modal.style.display = 'none';
   }
 });
+
+// Esc Tuşu modal kapatma işlevi
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        modal.style.display = 'none';
+    }
+  });
