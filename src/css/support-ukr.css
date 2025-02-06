@@ -46,13 +46,18 @@
     div.div-support {
         position: relative;
         top: 40px;
+        height: 292px;
+    }
+    div.slider-div {
+        margin-top: 50px;
     }
     svg.block>use {
         fill: #FFFFFF;
         
     }
     ol.support-list li.last3 {
-        visibility: hidden;
+        display: none;
+        
     }
 }
 
@@ -83,9 +88,11 @@
         margin-right: 12px;
 
     }
+    
     ol.support-list {
         color: var(--white);
         list-style: none;
+        
     }
     ol.support-list li {
         counter-increment: custom;
