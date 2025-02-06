@@ -1,6 +1,6 @@
 import { getTopBooks, getBooksByCategory } from './booksAPI.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
- import { onOpenModal } from './modal.js';
+import { onOpenModal } from './modal.js';
 import { showNoBooksAlert } from './warnings.js';
 
 const references = {
@@ -47,9 +47,22 @@ function renderTopList(elem) {
 //Kitap kartlarının oluşturulması (kapak, başlık ve yazar ismi)
 function renderBooks(books) {
   let i = 1;
-  const bookHtml = books
+
+  const filteredBooks = books.filter(book => book.book_image);
+  const booksToShow = [];
+
+  for (let j = 0; j < filteredBooks.length; j++) {
+    booksToShow.push(filteredBooks[j]);
+  }
+
+  while (booksToShow.length < 5) {
+    booksToShow.push(filteredBooks[booksToShow.length % filteredBooks.length]);
+  }
+
+  const bookHtml = booksToShow
     .map(
-      book => `
+      book =>
+        `
         <li class="top_list-card" data-book-sequence-number="${i++}">
             <div class="top_list-book_cover_wrapper" data-bookid="${book._id}">
                 <img class="top_list-book_cover" src="${
@@ -88,13 +101,15 @@ const clickSeeMore = function (event) {
 };
 
 const clickByAllCategories = async function (event) {
-  if (event.target.classList.contains('all_categories')) { //All Kategories butonuna tıklandığında;
+  if (event.target.classList.contains('all_categories')) {
+    //All Kategories butonuna tıklandığında;
     references.titleElement.innerHTML = 'Best Sellers <span>Books</span>';
     references.categoryListElem.classList.add('hidden');
     references.topListElem.classList.remove('hidden');
     allCategoriesActive('All categories');
   }
-  if (event.target.classList.contains('...')) { //Kategori listesine (bağlantısına) tıklandığında;
+  if (event.target.classList.contains('...')) {
+    //Kategori listesine (bağlantısına) tıklandığında;
     references.titleElement.innerHTML = category; //Başlığı kategori adı ile değiştirir.
     references.categoryListElem.classList.remove('hidden');
     references.topListElem.classList.add('hidden');
