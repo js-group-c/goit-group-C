@@ -103,7 +103,7 @@ li {
 }
 
 /* Tablet */
-@media screen and (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .top_list-container {
     width: inherit;
     flex-wrap: wrap;
@@ -131,10 +131,15 @@ li {
   .top_list-category_name {
     line-height: 24px;
   }
+  .top_list-quick {
+    width: 218px;
+    height: 100px;
+    font-size: 20px;
+  }
 }
 
 /* Desktop */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1440px) {
   .top_list-cards {
     flex-direction: row;
     flex-wrap: wrap;
