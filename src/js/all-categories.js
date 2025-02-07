@@ -5,11 +5,12 @@ fetch(url)
   })
   .then(data => {
     data.forEach(cat => {
-        const markup = `<li class="ctg"><a href="#" class='${cat.list_name}'>${cat.list_name}</a></li>`;
-        document.getElementById('categories').insertAdjacentHTML("beforeend", markup);
-    })
+      const markup = `<li class="ctg"><a href="#" class='sideCat'>${cat.list_name}</a></li>`;
+      document
+        .getElementById('categories')
+        .insertAdjacentHTML('beforeend', markup);
+    });
   })
-  .catch(function(error) {
+  .catch(function (error) {
     console.log(error);
   });
-
