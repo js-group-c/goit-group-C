@@ -186,3 +186,45 @@ li {
     width: fit-content;
   }
 }
+
+/* Scroll Up Butonu */
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #4F2EE8;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: rgba(79, 46, 232, 0.3);
+}
+
+.scroll-up {
+  width: 24px;
+  height: 24px;
+  fill: #FFFFFF;
+  top: 20px;
+  left: 20px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  background-color: #4F2EE8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 5.5px;
+}

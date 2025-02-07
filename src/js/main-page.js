@@ -196,3 +196,24 @@ window.addEventListener('scroll', function () {
     scrollHandler();
   }, 300);
 });
+
+//Scroll Up Butonu 
+const scrollTopBtn = document.getElementById('scrollToTopBtn');
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+
+scrollTopBtn.addEventListener('click', onScrollBtnClick);
+window.addEventListener('scroll', onScroll);
+
+function onScroll() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById('scrollToTopBtn').style.display = 'block';
+    scrollTopBtn.classList.remove('btnHidden');
+  } else {
+    document.getElementById('scrollToTopBtn').style.display = 'none';
+  }
+}
+
+function onScrollBtnClick() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
