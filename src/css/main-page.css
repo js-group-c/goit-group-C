@@ -101,6 +101,40 @@ li {
 .top_list-book_cover_wrapper:hover .top_list-quick {
   display: block;
 }
+.category_list-card {
+  display: flex;
+  flex-direction: column;
+  width: 335px;
+}
+.category_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.all_categories {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  width: 200px;
+  height: 46px;
+  padding: 14px 25px 14px 28px;
+  gap: 10px;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  background-color: transparent;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+li::marker {
+    content: '';
+  }
 
 /* Tablet */
 @media screen and (min-width: 768px) {
@@ -120,6 +154,9 @@ li {
   .top_list-book_cover {
     width: 218px;
     height: 316px;
+  }
+  .category_list-card {
+    width: 218px;
   }
   .top_list-card {
     width: 218px;
@@ -148,6 +185,21 @@ li {
   .top_list-card {
     display: flex;
     flex-direction: column;
+    width: 180px;
+  }
+  /* .category_list-card {
+        display: flex;
+    flex-direction: column;
+    width: 180px;
+  }
+  .category_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  } */
+  .category_list-card{
     width: 180px;
   }
   .top_list-container {
@@ -202,7 +254,7 @@ li {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
   cursor: pointer;
   width: 64px;
   height: 64px;
@@ -217,7 +269,7 @@ li {
 .scroll-up {
   width: 24px;
   height: 24px;
-  fill: #FFFFFF;
+  fill: #ffffff;
   top: 20px;
   left: 20px;
 }
@@ -226,10 +278,14 @@ li {
   border-radius: 50%;
   width: 54px;
   height: 54px;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   left: 5.5px;
+}
+
+.hidden {
+  display: none;
 }
