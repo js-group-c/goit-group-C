@@ -101,15 +101,16 @@ const clickSeeMore = function (event) {
 };
 
 const clickByAllCategories = async function (event) {
-  if (event.target.classList.contains('all_categories')) {
+  if (event.target.classList.contains('all-categories')) {
     //All Kategories butonuna tıklandığında;
     references.titleElement.innerHTML = 'Best Sellers <span>Books</span>';
     references.categoryListElem.classList.add('hidden');
     references.topListElem.classList.remove('hidden');
     allCategoriesActive('All categories');
   }
-  if (event.target.classList.contains('...')) {
+  if (event.target.classList.contains('sideCat')) {
     //Kategori listesine (bağlantısına) tıklandığında;
+    const category = event.target.textContent.trim();
     references.titleElement.innerHTML = category; //Başlığı kategori adı ile değiştirir.
     references.categoryListElem.classList.remove('hidden');
     references.topListElem.classList.add('hidden');
@@ -170,10 +171,10 @@ function titleCategory(category) {
 
 //Seçilen kategori aktif olur.
 function allCategoriesActive(category) {
-  document.querySelectorAll('...'); // Tüm kategori bağlantılarını seçer.
+  const categories = document.querySelectorAll('.ctg'); // Tüm kategori bağlantılarını seçer.
 
-  references.allCategoriesElement.forEach(link => {
-    if (link.textContent.trim() === category) {
+  categories.forEach(link => {
+    if (link.textContent.trim().toLowerCase() === category.toLowerCase()) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
@@ -212,7 +213,7 @@ window.addEventListener('scroll', function () {
   }, 300);
 });
 
-//Scroll Up Butonu 
+//Scroll Up Butonu
 const scrollTopBtn = document.getElementById('scrollToTopBtn');
 document.body.scrollTop = 0;
 document.documentElement.scrollTop = 0;
