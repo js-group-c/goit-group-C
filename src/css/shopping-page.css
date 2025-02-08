@@ -1,5 +1,5 @@
 .ctg-support-ukr {
-  display: none;
+  display: hidden;
 }
 
 .shopping-list-title {
@@ -140,6 +140,9 @@
 
 
 @media (min-width: 768px) {
+  .ctg-support-ukr {
+    display: none;
+  }
   
   .shopping-list-title {
     font-size: 48px;
