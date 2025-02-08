@@ -147,7 +147,7 @@ async function categoryList(category) {
           `;
     });
 
-    html += `<p class="all_categories">End</p>`;
+    html += `<p class="all_categories"</p>`;
     references.categoryListElem.innerHTML = html;
   } catch (error) {
     console.error('Kategori verisi alınırken hata oluştu:', error);
