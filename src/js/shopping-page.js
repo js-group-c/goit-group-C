@@ -1,32 +1,20 @@
 import { getBookByIds } from './booksAPI.js';
 
 let savedBooks = JSON.parse(localStorage.getItem('shoppingList')) || [];
-let isFetching = false; // Fetch işleminin sadece bir kez yapılmasını sağlamak için kontrol değişkeni
+const booksContainer = document.getElementById('book-container');
+const emptyListMessage = document.querySelector('.empty-list');
 
-async function updateBookList() {
-  const booksContainer = document.getElementById('book-container');
-  const emptyListMessage = document.querySelector('.empty-list');
-  booksContainer.innerHTML = '';
-}
-// fetchBooks sadece bir kez çalışacak şekilde güncellendi
+
 async function fetchBooks() {
-  if (isFetching) return; // Eğer zaten bir fetch işlemi yapılıyorsa, yeni bir fetch yapılmasın
-  isFetching = true; // Fetch işlemi başladığında flag'i true yapıyoruz
-
-  console.trace('fetchBooks çağrıldı');
-  const booksContainer = document.getElementById('book-container');
-  const emptyListMessage = document.querySelector('.empty-list');
-
   if (savedBooks.length === 0) {
     emptyListMessage.style.display = 'block'; // Boş liste mesajını göster
     booksContainer.innerHTML = ''; // Kitap listesini temizle
-    isFetching = false; // Fetch işlemi bittiğinde flag'i false yapıyoruz
     return;
   } else {
     emptyListMessage.style.display = 'none'; // Boş liste mesajını gizle
   }
 
-  // booksContainer.innerHTML = ''; // Önce kitapları temizle
+  booksContainer.innerHTML = ''; // Önce kitapları temizle
 
   // Geçersiz ID'leri filtrele
   const validBookIds = savedBooks.filter(
@@ -36,7 +24,6 @@ async function fetchBooks() {
   if (validBookIds.length === 0) {
     emptyListMessage.style.display = 'block';
     booksContainer.innerHTML = '';
-    isFetching = false; // Fetch işlemi bittiğinde flag'i false yapıyoruz
     return;
   }
 
@@ -66,13 +53,11 @@ async function fetchBooks() {
     console.error('Error', error);
   }
 
-  isFetching = false; // Fetch işlemi bittiğinde flag'i false yapıyoruz
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetchBooks(); // İlk yüklemede kitapları getir
-});
+document.addEventListener('DOMContentLoaded', fetchBooks);
 
+// Kitapları silme 
 document
   .getElementById('book-container')
   .addEventListener('click', function (event) {
@@ -83,7 +68,7 @@ document
       savedBooks = savedBooks.filter(id => id !== bookId);
 
       // Güncellenmiş listeyi kaydet
-      updateShoppingList(savedBooks); // Burada kaydediyoruz
+      updateShoppingList(savedBooks); // localStorage'ı güncelleme fonksiyonu
 
       // Kitap listesini güncelle
       fetchBooks();
@@ -93,13 +78,10 @@ document
 // localStorage'ı güncelleme fonksiyonu
 function updateShoppingList(updatedBooks) {
   localStorage.setItem('shoppingList', JSON.stringify(updatedBooks));
-
-  // Sayfa görünüyorsa, kitapları güncelle
-  if (!document.hidden) {
-    fetchBooks();
-  }
+  booksContainer.innerHTML = '';
 }
 
+// Pagination görünür ve gizli yapma 
 const pagination = document.querySelector('.pagination');
 
 if (savedBooks.length === 0) {
