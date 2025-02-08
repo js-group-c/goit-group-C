@@ -116,6 +116,13 @@ const clickByAllCategories = async function (event) {
     references.topListElem.classList.add('hidden');
     allCategoriesActive(category);
     await categoryList(category); //Seçilen kategoriye ait kitapları getirir.
+
+    spinnerPlay(references.categoryListElem);
+    try {
+      await categoryList(category);
+    } finally {
+      spinnerStop();
+    }
   }
 };
 
