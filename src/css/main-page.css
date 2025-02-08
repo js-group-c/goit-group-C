@@ -270,8 +270,8 @@ li::marker {
   width: 24px;
   height: 24px;
   fill: #ffffff;
-  top: 20px;
-  left: 20px;
+  padding-top: 5px;
+  padding-left: 2px;
 }
 
 .circle {

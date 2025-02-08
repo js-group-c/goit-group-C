@@ -111,7 +111,7 @@ const clickByAllCategories = async function (event) {
   if (event.target.classList.contains('sideCat')) {
     //Kategori listesine (bağlantısına) tıklandığında;
     const category = event.target.textContent.trim();
-    references.titleElement.innerHTML = category; //Başlığı kategori adı ile değiştirir.
+    titleCategory(category);
     references.categoryListElem.classList.remove('hidden');
     references.topListElem.classList.add('hidden');
     allCategoriesActive(category);
@@ -161,11 +161,14 @@ function titleCategory(category) {
     return;
   }
 
-  const lastWord = words.pop();
-  references.titleElement.textContent = words.join(' ');
+  const firstWord = words.shift(); //İlk kelimeyi alır
+  const lastWords = words.join(' '); //Geri kalanları birleştirir.
 
-  const spanElement = document.createElement('span');
-  spanElement.textContent = ' ' + lastWord;
+  references.titleElement.textContent = firstWord + ' '; //İlk kelimeyi başlığa ekler.
+
+  const spanElement = document.createElement('span'); 
+  spanElement.textContent = lastWords; 
+  
   references.titleElement.appendChild(spanElement);
 }
 
