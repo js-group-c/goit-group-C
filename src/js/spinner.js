@@ -1,9 +1,9 @@
 import { Spinner } from 'spin.js';
 
 let opts = {
-    lines: 13,
-    length: 38,
-    width: 17,
+    lines: 12,
+    length: 30,
+    width: 15,
     radius: 45,
     scale: 1,
     corners: 1,
@@ -11,7 +11,7 @@ let opts = {
     rotate: 0,
     animation: 'spinner-line-fade-quick',
     direction: 1,
-    color: '#ffffff',
+    color: '#EAC645',
     fadeColor: 'transparent',
     top: '50%',
     left: '50%',

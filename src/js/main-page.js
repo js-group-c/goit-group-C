@@ -111,11 +111,18 @@ const clickByAllCategories = async function (event) {
   if (event.target.classList.contains('sideCat')) {
     //Kategori listesine (bağlantısına) tıklandığında;
     const category = event.target.textContent.trim();
-    references.titleElement.innerHTML = category; //Başlığı kategori adı ile değiştirir.
+    titleCategory(category);
     references.categoryListElem.classList.remove('hidden');
     references.topListElem.classList.add('hidden');
     allCategoriesActive(category);
     await categoryList(category); //Seçilen kategoriye ait kitapları getirir.
+
+    spinnerPlay(references.categoryListElem);
+    try {
+      await categoryList(category);
+    } finally {
+      spinnerStop();
+    }
   }
 };
 
@@ -140,7 +147,7 @@ async function categoryList(category) {
           `;
     });
 
-    html += `<li><button class="all_categories">All Categories</button></li>`;
+    html += `<p class="end_categories">End</p>`;
     references.categoryListElem.innerHTML = html;
   } catch (error) {
     console.error('Kategori verisi alınırken hata oluştu:', error);
@@ -184,13 +191,13 @@ function allCategoriesActive(category) {
 
 //Sayfa en alta kaydırıldığında seçilen kategoriye ait kitap yoksa bu kategoride kitap bulunmamaktadır uyarısı verir.
 function scrollHandler() {
-  const allCategoriesButton = document.querySelector('.all_categories');
-  if (allCategoriesButton) {
-    const allCatBtnPosition = allCategoriesButton.getBoundingClientRect(); //Butonun konumu alınır.
+  const endCategories = document.querySelector('.end_categories');
+  if (endCategories) {
+    const endCatPosition = endCategories.getBoundingClientRect(); //Konum alınır.
     const windowHeight = window.innerHeight; //Kullanıcının görünür pencere yükseliğini alır.
 
     if (
-      allCatBtnPosition.top < windowHeight &&
+      endCatPosition.top < windowHeight &&
       !noBooksAlertShow &&
       references.topListElem.classList.contains('hidden')
     ) {
