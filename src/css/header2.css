@@ -68,11 +68,11 @@
     right: 0;
     background: var(--violet);
     z-index: 100;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
-  .modal {
+  .modal-signUp {
     background: #f6f6f6;
     width: 80%;
     height: 516px;
