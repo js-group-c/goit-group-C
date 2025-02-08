@@ -54,7 +54,7 @@ function toggleMode() {
   var title = document.querySelector('.top_list-title');
   var bookTitles = document.querySelectorAll('.top_list-book_title ');
   var seeMore = document.querySelectorAll('.top_list-see_more');
-  var allCats = document.querySelector('.end_categories');
+  var allCats = document.querySelector('.all_categories');
 
   if (svg.innerHTML.includes(`Switcher-2@2x.svg#switcher2`)) {
     svg.innerHTML = `<use href="../img/SwitcherDark@2x.svg#switcherDark"></use>`;
@@ -69,6 +69,7 @@ function toggleMode() {
       elem.style.color = '#FFFFFF';
     });
     title.style.color = 'var(--white)';
+    //allCats.style.color = 'var(--white)';
     bookTitles.forEach(e => {
       e.style.color = 'var(--white)';
     });
@@ -88,6 +89,7 @@ function toggleMode() {
       elem.style.color = '#111111';
     });
     title.style.color = 'var(--black)';
+    //allCats.style.color = 'var(--black)';
     bookTitles.forEach(e => {
       e.style.color = 'var(--black)';
     });
