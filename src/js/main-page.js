@@ -161,14 +161,11 @@ function titleCategory(category) {
     return;
   }
 
-  const firstWord = words.shift(); //İlk kelimeyi alır
-  const lastWords = words.join(' '); //Geri kalanları birleştirir.
+  const lastWord = words.pop();
+  references.titleElement.textContent = words.join(' ');
 
-  references.titleElement.textContent = firstWord + ' '; //İlk kelimeyi başlığa ekler.
-
-  const spanElement = document.createElement('span'); 
-  spanElement.textContent = lastWords; 
-  
+  const spanElement = document.createElement('span');
+  spanElement.textContent = ' ' + lastWord;
   references.titleElement.appendChild(spanElement);
 }
 
