@@ -73,9 +73,9 @@
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     .ctg-support-ukr {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      justify-content:space-between;
+      /* align-items:center; */
+      flex-direction: row;
     }
   }
   @media screen and (min-width: 1440px) {
