@@ -34,6 +34,7 @@ window.onclick = function (event) {
   if (event.target == modal) modal.style.display = 'none';
 };
 mnuSignIn.onclick = function () {
+  
   var inputUsername = document.querySelector('#username');
   var linkSignUp = document.querySelector('#window-sign-up');
   var linkSignIn = document.querySelector('#window-sign-in');
@@ -49,6 +50,7 @@ mnuSignIn.onclick = function () {
   btnSignIn.textContent = "SIGN IN";
 };
 mnuSignUp.onclick = function () {
+  
   var inputUsername = document.querySelector('#username');
   var linkSignUp = document.querySelector('#window-sign-up');
   var linkSignIn = document.querySelector('#window-sign-in');
@@ -68,19 +70,34 @@ function signUp() {
   var username = document.getElementById('username').value;
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
+  var btnSignIn = document.querySelector("button.submit-button");
+  const users = JSON.parse(localStorage.getItem('users')) || [];
 
-  if (!username || !email || !password) {
-    alert('Please fill out all fields.');
-    return;
+  if (btnSignIn.textContent === "SIGN UP") {
+    if (!username || !email || !password)  {
+      alert('Please fill out all fields.');
+      return;
+    } else {
+      
+      // Add new user to the array
+      users.push({ username, email, password });
+      // Save updated users array back to LocalStorage
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Signup Successful!');
+      modal.style.display = 'none';
+    }
   } else {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    // Add new user to the array
-    users.push({ username, email, password });
-    // Save updated users array back to LocalStorage
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Signup Successful!');
-    modal.style.display = 'none';
+      const user = users.find(u=> {
+        return u.email === email; 
+      })
+      
+      if (user.password !== password) {
+         alert("Password does not match or user does not exist!");
+       } else {
+         alert("Signin successful!")
+       }
   }
+  
 }
 function toggleMode() {
   var svg = document.querySelector('svg.swicther-2-svg');
