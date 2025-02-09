@@ -577,4 +577,12 @@
     border-radius: 36px;
 
   }
+  div.signed-in img {
+    position: relative;
+    left: -50px;
+  }
+  svg.btn-sign-out {
+    position: relative;
+    right: -40px;
+  }
 }
