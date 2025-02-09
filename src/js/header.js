@@ -60,6 +60,7 @@ function toggleMode() {
   var signUpInputs = document.querySelectorAll(".login-form form input");
   var loginFormButton = document.querySelector(".login-form button");
   var modalWindows = document.querySelectorAll("div.modal-window > a");
+  var closeModal = document.querySelector("div.close-modal");
 
 
   if (svg.innerHTML.includes(`Switcher-2@2x.svg#switcher2`)) {
@@ -92,6 +93,7 @@ function toggleMode() {
     modalWindows.forEach(mw => {
       mw.style.color = 'var(--white)';
     });
+    closeModal.style.color = 'var(--white)';
   } else {
     svg.innerHTML = `<use href="../img/Switcher-2@2x.svg#switcher2"></use>`;
     header.style.backgroundColor = 'var(--white)';
@@ -122,5 +124,6 @@ function toggleMode() {
     modalWindows.forEach(mw => {
       mw.style.color = 'var(--black)';
     });
+    closeModal.style.color = 'var(--black)';
   }
 }
