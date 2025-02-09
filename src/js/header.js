@@ -91,10 +91,11 @@ function signUp() {
         return u.email === email; 
       })
       
-      if (user.password !== password) {
+      if ((user == undefined) || (user.password !== password)) {
          alert("Password does not match or user does not exist!");
        } else {
          alert("Signin successful!")
+         modal.style.display = 'none';
        }
   }
   
