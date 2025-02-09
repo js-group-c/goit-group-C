@@ -32,9 +32,9 @@ window.onclick = function (event) {
 };
 
 function signUp() {
-  var username = document.getElementById('username').value;
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+  var username = document.getElementById('username').val();
+  var email = document.getElementById('email').val();
+  var password = document.getElementById('password').val();
 
   if (username && email && password) {
     alert('Signup Successful!');
