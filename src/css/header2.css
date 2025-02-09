@@ -126,6 +126,30 @@
     height: 24px;
     margin-left: 40%;
   }
+  div.modal-window  a {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    
+    text-decoration-style: solid;
+    
+    text-decoration-thickness: Auto;
+    cursor: pointer;
+  }
+  div.modal-window  a#window-sign-up {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    
+    text-decoration-thickness: Auto;
+    color: var(--violet);
+  }
 }
 
 /* Tablet */
@@ -318,6 +342,22 @@
     height: 24px;
     margin-left: 231px;
   }
+  div.modal-window  a {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    
+    text-decoration-style: solid;
+    
+    text-decoration-thickness: Auto;
+    cursor: pointer;
+  }
+  div.modal-window  a#window-sign-up {
+    color: var(--violet);
+    text-decoration: underline;
+  }
 }
 
 /* Desktop */
@@ -509,5 +549,21 @@
     width: 153px;
     height: 24px;
     margin-left: 231px;
+  }
+  div.modal-window  a {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    
+    text-decoration-style: solid;
+    
+    text-decoration-thickness: Auto;
+    cursor: pointer;
+  }
+  div.modal-window  a#window-sign-up {
+    color: var(--violet);
+    text-decoration: underline;
   }
 }

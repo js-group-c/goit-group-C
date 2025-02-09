@@ -10,12 +10,16 @@ var btnHmbrgr = document.getElementsByClassName('hmbrgr')[0];
 var btnToggleMode = document.querySelector(
   'div.right-container > a.switcher-2'
 );
+var mnuSignIn = document.querySelector('#window-sign-in');
+var mnuSignUp = document.querySelector('#window-sign-up');
 
 btn.addEventListener('click', btn.onclick);
 btnHmbrgr.addEventListener('click', btnHmbrgr.onclick);
 submitBtn.addEventListener('click', signUp);
 
 btnToggleMode.addEventListener('click', toggleMode);
+mnuSignIn.addEventListener('click', mnuSignIn.onclick);
+mnuSignUp.addEventListener('click', mnuSignUp.onclick);
 
 btn.onclick = function () {
   modal.style.display = 'flex';
@@ -27,20 +31,55 @@ span.onclick = function () {
   modal.style.display = 'none';
 };
 window.onclick = function (event) {
-  if (event.target == modal) 
-    modal.style.display = 'none';
+  if (event.target == modal) modal.style.display = 'none';
+};
+mnuSignIn.onclick = function () {
+  var inputUsername = document.querySelector('#username');
+  var linkSignUp = document.querySelector('#window-sign-up');
+  var linkSignIn = document.querySelector('#window-sign-in');
+  var btnSignIn = document.querySelector("button.submit-button");
+
+  inputUsername.style.display = 'none';
+  linkSignUp.style.textDecoration = 'none';
+  linkSignUp.style.color = '#111111';
+
+  linkSignIn.style.textDecoration = 'underline';
+  linkSignIn.style.color = 'var(--violet)';
+
+  btnSignIn.textContent = "SIGN IN";
+};
+mnuSignUp.onclick = function () {
+  var inputUsername = document.querySelector('#username');
+  var linkSignUp = document.querySelector('#window-sign-up');
+  var linkSignIn = document.querySelector('#window-sign-in');
+  var btnSignIn = document.querySelector("button.submit-button");
+
+  inputUsername.style.display = '';
+  linkSignUp.style.textDecoration = 'underline';
+  linkSignUp.style.color = 'var(--violet)';
+
+  linkSignIn.style.textDecoration = 'none';
+  linkSignIn.style.color = '#111111';
+
+  btnSignIn.textContent = "SIGN UP";
 };
 
 function signUp() {
-  var username = document.getElementById('username').val();
-  var email = document.getElementById('email').val();
-  var password = document.getElementById('password').val();
+  var username = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
 
-  if (username && email && password) {
+  if (!username || !email || !password) {
+    alert('Please fill out all fields.');
+    return;
+  } else {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    // Add new user to the array
+    users.push({ username, email, password });
+    // Save updated users array back to LocalStorage
+    localStorage.setItem('users', JSON.stringify(users));
     alert('Signup Successful!');
     modal.style.display = 'none';
-  } else {
-    alert('Please fill out all fields.');
   }
 }
 function toggleMode() {
@@ -56,12 +95,11 @@ function toggleMode() {
   var bookTitles = document.querySelectorAll('.top_list-book_title ');
   var seeMore = document.querySelectorAll('.top_list-see_more');
   //var allCats = document.querySelector('.all_categories');
-  var signUpModal = document.querySelector(".modal-signUp");
-  var signUpInputs = document.querySelectorAll(".login-form form input");
-  var loginFormButton = document.querySelector(".login-form button");
-  var modalWindows = document.querySelectorAll("div.modal-window > a");
-  var closeModal = document.querySelector("div.close-modal");
-
+  var signUpModal = document.querySelector('.modal-signUp');
+  var signUpInputs = document.querySelectorAll('.login-form form input');
+  var loginFormButton = document.querySelector('.login-form button');
+  var modalWindows = document.querySelectorAll('div.modal-window > a');
+  var closeModal = document.querySelector('div.close-modal');
 
   if (svg.innerHTML.includes(`Switcher-2@2x.svg#switcher2`)) {
     svg.innerHTML = `<use href="../img/SwitcherDark@2x.svg#switcherDark"></use>`;
