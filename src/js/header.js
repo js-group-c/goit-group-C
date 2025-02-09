@@ -34,11 +34,10 @@ window.onclick = function (event) {
   if (event.target == modal) modal.style.display = 'none';
 };
 mnuSignIn.onclick = function () {
-  
   var inputUsername = document.querySelector('#username');
   var linkSignUp = document.querySelector('#window-sign-up');
   var linkSignIn = document.querySelector('#window-sign-in');
-  var btnSignIn = document.querySelector("button.submit-button");
+  var btnSignIn = document.querySelector('button.submit-button');
 
   inputUsername.style.display = 'none';
   linkSignUp.style.textDecoration = 'none';
@@ -47,14 +46,13 @@ mnuSignIn.onclick = function () {
   linkSignIn.style.textDecoration = 'underline';
   linkSignIn.style.color = 'var(--violet)';
 
-  btnSignIn.textContent = "SIGN IN";
+  btnSignIn.textContent = 'SIGN IN';
 };
 mnuSignUp.onclick = function () {
-  
   var inputUsername = document.querySelector('#username');
   var linkSignUp = document.querySelector('#window-sign-up');
   var linkSignIn = document.querySelector('#window-sign-in');
-  var btnSignIn = document.querySelector("button.submit-button");
+  var btnSignIn = document.querySelector('button.submit-button');
 
   inputUsername.style.display = '';
   linkSignUp.style.textDecoration = 'underline';
@@ -63,22 +61,22 @@ mnuSignUp.onclick = function () {
   linkSignIn.style.textDecoration = 'none';
   linkSignIn.style.color = '#111111';
 
-  btnSignIn.textContent = "SIGN UP";
+  btnSignIn.textContent = 'SIGN UP';
 };
 
 function signUp() {
   var username = document.getElementById('username').value;
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  var btnSignIn = document.querySelector("button.submit-button");
+  var btnSignIn = document.querySelector('button.submit-button');
   const users = JSON.parse(localStorage.getItem('users')) || [];
+  var btnSignUp = document.querySelector('svg.btn-sign-up');
 
-  if (btnSignIn.textContent === "SIGN UP") {
-    if (!username || !email || !password)  {
+  if (btnSignIn.textContent === 'SIGN UP') {
+    if (!username || !email || !password) {
       alert('Please fill out all fields.');
       return;
     } else {
-      
       // Add new user to the array
       users.push({ username, email, password });
       // Save updated users array back to LocalStorage
@@ -87,18 +85,19 @@ function signUp() {
       modal.style.display = 'none';
     }
   } else {
-      const user = users.find(u=> {
-        return u.email === email; 
-      })
-      
-      if ((user == undefined) || (user.password !== password)) {
-         alert("Password does not match or user does not exist!");
-       } else {
-         alert("Signin successful!")
-         modal.style.display = 'none';
-       }
+    const user = users.find(u => {
+      return u.email === email;
+    });
+
+    if (user == undefined || user.password !== password) {
+      alert('Password does not match or user does not exist!');
+    } else {
+      alert('Signin successful!');
+      modal.style.display = 'none';
+      btnSignUp.style.display = 'none';
+      createUserProfile(user.username);
+    }
   }
-  
 }
 function toggleMode() {
   var svg = document.querySelector('svg.swicther-2-svg');
@@ -182,4 +181,10 @@ function toggleMode() {
     });
     closeModal.style.color = 'var(--black)';
   }
+}
+function createUserProfile(username) {
+  var btnUserProfile = document.querySelector('a#btn-sign-up');
+  var markup = `<div class='signed-in'><img src='../img/Stephen.png' width=37 height= 37 /><p>${username}</p></div>`;
+  btnUserProfile.insertAdjacentHTML('beforeend',markup);
+  console.log(btnUserProfile.innerHTML);
 }
