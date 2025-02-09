@@ -56,6 +56,11 @@ function toggleMode() {
   var bookTitles = document.querySelectorAll('.top_list-book_title ');
   var seeMore = document.querySelectorAll('.top_list-see_more');
   //var allCats = document.querySelector('.all_categories');
+  var signUpModal = document.querySelector(".modal-signUp");
+  var signUpInputs = document.querySelectorAll(".login-form form input");
+  var loginFormButton = document.querySelector(".login-form button");
+  var modalWindows = document.querySelectorAll("div.modal-window > a");
+
 
   if (svg.innerHTML.includes(`Switcher-2@2x.svg#switcher2`)) {
     svg.innerHTML = `<use href="../img/SwitcherDark@2x.svg#switcherDark"></use>`;
@@ -77,6 +82,16 @@ function toggleMode() {
     seeMore.forEach(e => {
       e.style.color = 'var(--white)';
     });
+    signUpModal.style.backgroundColor = 'var(--black)';
+    signUpInputs.forEach(i => {
+      i.style.backgroundColor = 'var(--black)';
+      i.classList.add('dark-mode');
+    });
+    loginFormButton.style.backgroundColor = 'var(--white)';
+    loginFormButton.style.color = 'var(--black)';
+    modalWindows.forEach(mw => {
+      mw.style.color = 'var(--white)';
+    });
   } else {
     svg.innerHTML = `<use href="../img/Switcher-2@2x.svg#switcher2"></use>`;
     header.style.backgroundColor = 'var(--white)';
@@ -96,6 +111,16 @@ function toggleMode() {
     });
     seeMore.forEach(e => {
       e.style.color = 'var(--black)';
+    });
+    signUpModal.style.backgroundColor = '#F6F6F6';
+    signUpInputs.forEach(i => {
+      i.style.backgroundColor = '#F6F6F6';
+      i.classList.remove('dark-mode');
+    });
+    loginFormButton.style.backgroundColor = '#111111';
+    loginFormButton.style.color = 'var(--white)';
+    modalWindows.forEach(mw => {
+      mw.style.color = 'var(--black)';
     });
   }
 }
