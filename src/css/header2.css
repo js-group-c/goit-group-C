@@ -68,7 +68,7 @@
     right: 0;
     background: var(--violet);
     z-index: 100;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
   }
