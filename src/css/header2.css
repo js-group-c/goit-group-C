@@ -358,6 +358,35 @@
     color: var(--violet);
     text-decoration: underline;
   }
+  div.signed-in {
+    min-width: 184px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--violet);
+    
+    border-radius: 36px;
+    
+
+  }
+  div.signed-in img {
+    position: relative;
+    left: -50px;
+  }
+  a#btn-sign-out {
+    display: none;
+  }
+  svg.btn-sign-out {
+    position: relative;
+    right: -40px;
+  }
+  svg.btn-log-out {
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    cursor: pointer;
+  }
 }
 
 /* Desktop */
