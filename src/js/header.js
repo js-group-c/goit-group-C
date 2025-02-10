@@ -135,7 +135,7 @@ function toggleMode() {
   var closeModal = document.querySelector('div.close-modal');
 
   if (svg.innerHTML.includes(`Switcher-2@2x.svg#switcher2`)) {
-    svg.innerHTML = `<use href="../img/SwitcherDark@2x.svg#switcherDark"></use>`;
+    svg.innerHTML = `<use href="img/SwitcherDark@2x.svg#switcherDark"></use>`;
     header.style.backgroundColor = 'var(--black)';
     header.style.border = ' 1.5px solid #FFFFFF';
     navLogoTxt.style.filter = 'brightness(0) invert(1)';
@@ -167,7 +167,7 @@ function toggleMode() {
     });
     closeModal.style.color = 'var(--white)';
   } else {
-    svg.innerHTML = `<use href="../img/Switcher-2@2x.svg#switcher2"></use>`;
+    svg.innerHTML = `<use href="img/Switcher-2@2x.svg#switcher2"></use>`;
     header.style.backgroundColor = 'var(--white)';
     header.style.border = ' 1.5px solid #111111';
     navLogoTxt.style.filter = '';
@@ -202,10 +202,10 @@ function toggleMode() {
 }
 function createUserProfile(username) {
   
-  var markup = `<div class='signed-in'><img src='../img/Stephen.png' width=37 height= 37 alt='Stephen'/>
+  var markup = `<div class='signed-in'><img src='img/Stephen.png' width=37 height= 37 alt='Stephen'/>
                     <p>${username}</p>
                     <svg class="sign-out btn-sign-out" width="23" height="26">
-                       <use href="../img/drop-down.svg#drop-down"></use>
+                       <use href="img/drop-down.svg#drop-down"></use>
                     </svg>
                 </div>`;
   btnUserProfile.insertAdjacentHTML('beforeend', markup);
