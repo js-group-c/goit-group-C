@@ -143,6 +143,7 @@ function toggleMode() {
     shoppingLink.style.color = 'var(--white)';
     shoppingIcon.style.filter = 'brightness(0) invert(1)';
     body.style.backgroundColor = 'var(--black)';
+    body.classList.add('dark-mode');
     ctgs.forEach(elem => {
       elem.style.color = '#FFFFFF';
     });
@@ -174,7 +175,8 @@ function toggleMode() {
     shoppingLink.style.color = 'var(--black)';
     shoppingIcon.style.filter = '';
     body.style.backgroundColor = 'var(--white)';
-    ctgs.forEach(elem => {
+    body.classList.remove('dark-mode');
+        ctgs.forEach(elem => {
       elem.style.color = '#111111';
     });
     title.style.color = 'var(--black)';

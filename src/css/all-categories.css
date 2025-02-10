@@ -30,6 +30,10 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+   /* Dark modda hover rengini sarı yap */
+   .dark-mode #categories li.ctg:hover {
+    color: #EAC645 !important;
+   }
 }
 
 /* Tablet */
@@ -68,6 +72,10 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+  /* Dark modda hover rengini sarı yap */
+  .dark-mode #categories li.ctg:hover {
+   color: #EAC645 !important;
+  }
 }
 
 /* Desktop */
@@ -102,4 +110,8 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+   /* Dark modda hover rengini sarı yap */
+   .dark-mode #categories li.ctg:hover {
+    color: #EAC645 !important;
+   }
 }
