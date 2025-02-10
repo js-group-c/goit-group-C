@@ -1,153 +1,189 @@
-@media (max-width: 767px) {
-  /* Sadece mobil için */
-  .ctg-support-ukr {
-    visibility: hidden;
-    display: none;
-    height: 0;
-  }
-  .shopping-list-title {
-    font-family: 'DM Sans', serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 38px;
-    letter-spacing: -4%;
-    color: black;
-    display: flex;
-    justify-content: start;
-    display: flex;
-    gap: 10px;
-    margin: 20px;
-  }
-  .shopping-list-title span {
-    color: rgba(79, 46, 232, 1);
-  }
-  .empty-list {
-    width: 265px;
-    height: 248px;
-    margin-left: 55px;
-    margin-top: 50px;
-  }
-  .empty-text {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -2%;
-    align-items: center;
-    color: rgba(0, 0, 0, 0.6);
-    padding-bottom: 14px;
-  }
-  /* EMPTY PAGE is END */
-  .books-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  .book-card {
-    width: 335px;
-    height: 170px;
-    margin: 18px 20px;
-    border: 2px solid rgba(76, 46, 232, 0.4);
-    color: white;
-    padding: 30px 24px 30px 24px;
-    display: flex;
-    border-radius: 16px;
-    align-items: center;
-    text-align: center;
-    position: relative;
-  }
-  .book-cover {
-    width: 100px;
-    height: 142px;
-    border-radius: 8px;
-    position: absolute;
-    left: 8px;
-    top: 8px;
-  }
-  .book-info {
-    height: 170px;
-    align-items: start;
-    justify-content: start;
-    text-align: start;
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    position: absolute;
-    top: 0;
-    width: 215px;
-    right: 0;
-  }
-  .book-info h3 {
-    font-family: 'DM Sans', serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: -4%;
-    color: rgba(17, 17, 17, 1);
-    position: absolute;
-    top: 10px;
-    width: 100%; /* Ebeveynin genişliğini alır */
-    white-space: nowrap; /* Alt satıra geçmesini engeller */
-    overflow: hidden; /* Taşan kısmı gizler */
-    text-overflow: ellipsis;
-    width: 144px;
-  }
-  .category {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 3%;
-    color: rgba(180, 175, 175, 1);
-    width: 193px;
-    position: absolute;
-    top: 30px;
-  }
-  .description {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -4%;
-    color: rgba(17, 17, 17, 1);
-    display: -webkit-box; /* Bu kısım önemli */
-    -webkit-line-clamp: 3; /* 2 satır gösterilecek */
-    -webkit-box-orient: vertical; /* Dikey düzen */
-    overflow: hidden;
-    position: absolute;
-    bottom: 60px;
-  }
-  .author {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: -4%;
-    color: rgba(180, 175, 175, 1);
-    position: absolute;
-    bottom: 10px;
-  }
-  .delete-btn {
-    position: absolute;
-    right: 5px;
-    top: 2.5px;
-    border-radius: 50%;
-    background-color: rgba(76, 46, 232, 1);
-    color: white;
-    border: none;
-    font-size: 18px;
-  }
-  .buy-button {
-    margin-left: 150px;
+/* Sadece mobil için */
+.ctg-support-ukr {
+  visibility: hidden;
+  display: none;
+  height: 0;
+}
+.shopping-list-title {
+  font-family: 'DM Sans', serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -4%;
+  color: black;
+  display: flex;
+  justify-content: start;
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+.shopping-list-title span {
+  color: rgba(79, 46, 232, 1);
+}
+.empty-list {
+  width: 265px;
+  height: 248px;
+  margin-left: 55px;
+  margin-top: 50px;
+}
+.empty-text {
+  font-family: 'DM Sans', serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -2%;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 14px;
+}
+/* EMPTY PAGE is END */
+.books-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.book-card {
+  /* width: 335px; */
+  height: 170px;
+  margin: 18px 20px;
+  border: 2px solid rgba(76, 46, 232, 0.4);
+  color: white;
+  padding: 30px 24px;
+  display: flex;
+  border-radius: 16px;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.book-cover {
+  /* width: 100px; */
+  height: 142px;
+  border-radius: 8px;
+  /* position: absolute; */
+  left: 8px;
+  top: 8px;
+}
+.book-info {
+  height: 170px;
+  align-items: start;
+  justify-content: start;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* position: absolute; */
+  top: 0;
+  /* width: 215px; */
+  right: 0;
+}
+.book-info h3 {
+  font-family: 'DM Sans', serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -4%;
+  color: rgba(17, 17, 17, 1);
+  position: absolute;
+  top: 10px;
+  white-space: nowrap; /* Alt satıra geçmesini engeller */
+  overflow: hidden; /* Taşan kısmı gizler */
+  text-overflow: ellipsis;
+  max-width: 50%;
+}
+
+.category {
+  font-family: 'DM Sans', serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 3%;
+  color: rgba(180, 175, 175, 1);
+  width: 193px;
+  position: absolute;
+  top: 30px;
+}
+.description {
+  font-family: 'DM Sans', serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -4%;
+  color: rgba(17, 17, 17, 1);
+  display: -webkit-box; /* Bu kısım önemli */
+  -webkit-line-clamp: 3; /* 2 satır gösterilecek */
+  -webkit-box-orient: vertical; /* Dikey düzen */
+  overflow: hidden;
+  position: absolute;
+  bottom: 60px;
+}
+.author {
+  font-family: 'DM Sans', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -4%;
+  color: rgba(180, 175, 175, 1);
+  position: absolute;
+  bottom: 10px;
+}
+.delete-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border-radius: 50%;
+  background-color: rgba(76, 46, 232, 1);
+  color: white;
+  border: none;
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+}
+.buy-button {
+  /* margin-left: 350px;
     margin-top: 30px;
     width: 56px;
-    height: 16px;
-    position: absolute;
-    bottom: 10px;
-  }
+    height: 16px; */
+  position: absolute;
+  right: 0; /* Sol kenara yasla */
+  bottom: 0; /* Alt kenara yasla */
+  padding: 10px;
+  /* bottom: 10px; */
 }
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.pagination-btn {
+  border-radius: 50%;
+  border: none;
+  padding: 7px;
+  border: 1px solid gray;
+  background-color: white;
+  color: black;
+}
+.paginaton-btn.active {
+  background-color: black;
+  color: white;
+}
+.pagination-btn:disabled {
+  background-color: black;
+  color: gray;
+}
+
+@media screen and (min-width: 768px) {
   .ctg-support-ukr {
     visibility: hidden;
     display: none;
@@ -274,6 +310,7 @@
     bottom: 0px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .shopping-list-title {
     font-family: 'DM Sans', serif;
@@ -379,30 +416,4 @@
     right: 10px;
     bottom: 10px;
   }
-}
-.pagination {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  font-weight: bold;
-}
-.pagination-btn {
-  border-radius: 50%;
-  border: none;
-  padding: 7px;
-  border: 1px solid gray;
-  background-color: white;
-  color: black;
-}
-.paginaton-btn.active {
-  background-color: black;
-  color: white;
-}
-.pagination-btn:disabled {
-  background-color: black;
-  color: gray;
 }
