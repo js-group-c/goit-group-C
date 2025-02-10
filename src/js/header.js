@@ -202,7 +202,7 @@ function toggleMode() {
 }
 function createUserProfile(username) {
   
-  var markup = `<div class='signed-in'><img src='../src/img/Stephen.png' width=37 height= 37 alt='Stephen'/>
+  var markup = `<div class='signed-in'><img src='/img/Stephen.png' width=37 height= 37 alt='Stephen'/>
                     <p>${username}</p>
                     <svg class="sign-out btn-sign-out" width="23" height="26">
                        <use href="img/drop-down.svg#drop-down"></use>
