@@ -1,4 +1,17 @@
-/* Sadece mobil için */
+/* Varsayılan tema (Light Mode) */
+body {
+  background-color: white;
+  color: black;
+  transition: 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+
 .ctg-support-ukr {
   visibility: hidden;
   height: 0;
@@ -152,6 +165,7 @@
   bottom: 0; /* Alt kenara yasla */
   padding: 10px;
   width: 56px;
+  color:#121212;
 }
 
 .pagination {
@@ -177,9 +191,22 @@
   background-color: black;
   color: white;
 }
+
+.page-number.active {
+  background-color: black;
+  color: white;
+}
 .pagination-btn:disabled {
   background-color: black;
   color: gray;
+}
+
+.last-page {
+  background-color: gold;
+}
+
+.next-page {
+  background-color: gold;
 }
 
 @media screen and (min-width: 768px) {
@@ -280,6 +307,7 @@ gap: 50px;
     display: flex;
     gap: 48px;
     height: 213px;
+    min-width: 996px;
   }
 
   .book-cover {
