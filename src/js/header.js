@@ -2,6 +2,7 @@ import { all } from 'axios';
 
 var modal = document.getElementById('login-modal');
 var btn = document.getElementById('btn-sign-up');
+var btnSignUp = document.querySelector('svg.btn-sign-up');
 var span = document.getElementsByClassName('close-modal')[0];
 
 var submitBtn = document.getElementsByClassName('submit-button')[0];
@@ -12,8 +13,16 @@ var btnToggleMode = document.querySelector(
 );
 var mnuSignIn = document.querySelector('#window-sign-in');
 var mnuSignUp = document.querySelector('#window-sign-up');
+var btnUserProfile = document.querySelector('a#btn-sign-up');
+var btnSignOut = document.querySelector('a#btn-sign-out');
 
-btn.addEventListener('click', btn.onclick);
+
+const signUpClick = function () {
+  modal.style.display = 'flex';
+};
+
+btn.addEventListener('click', signUpClick);
+
 btnHmbrgr.addEventListener('click', btnHmbrgr.onclick);
 submitBtn.addEventListener('click', signUp);
 
@@ -21,9 +30,9 @@ btnToggleMode.addEventListener('click', toggleMode);
 mnuSignIn.addEventListener('click', mnuSignIn.onclick);
 mnuSignUp.addEventListener('click', mnuSignUp.onclick);
 
-btn.onclick = function () {
-  modal.style.display = 'flex';
-};
+btnSignOut.addEventListener('click', signOutCompletely);
+
+
 btnHmbrgr.onclick = function () {
   modal.style.display = 'flex';
 };
@@ -69,8 +78,11 @@ function signUp() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   var btnSignIn = document.querySelector('button.submit-button');
+  var form = document.querySelector('form#sign-up-form');
+
+
   const users = JSON.parse(localStorage.getItem('users')) || [];
-  var btnSignUp = document.querySelector('svg.btn-sign-up');
+  
 
   if (btnSignIn.textContent === 'SIGN UP') {
     if (!username || !email || !password) {
@@ -83,6 +95,7 @@ function signUp() {
       localStorage.setItem('users', JSON.stringify(users));
       alert('Signup Successful!');
       modal.style.display = 'none';
+      form.reset();
     }
   } else {
     const user = users.find(u => {
@@ -96,6 +109,9 @@ function signUp() {
       modal.style.display = 'none';
       btnSignUp.style.display = 'none';
       createUserProfile(user.username);
+      btn.removeEventListener('click', signUpClick);
+      btn.addEventListener('click',showLogOut);
+      form.reset();
     }
   }
 }
@@ -183,13 +199,32 @@ function toggleMode() {
   }
 }
 function createUserProfile(username) {
-  var btnUserProfile = document.querySelector('a#btn-sign-up');
+  
   var markup = `<div class='signed-in'><img src='../img/Stephen.png' width=37 height= 37 alt='Stephen'/>
                     <p>${username}</p>
                     <svg class="sign-out btn-sign-out" width="23" height="26">
                        <use href="../img/drop-down.svg#drop-down"></use>
                     </svg>
                 </div>`;
-  btnUserProfile.insertAdjacentHTML('beforeend',markup);
-  console.log(btnUserProfile.innerHTML);
+  btnUserProfile.insertAdjacentHTML('beforeend', markup);
+  
 }
+function showLogOut() {
+  btnSignOut.style.display = "block";
+  btnSignOut.insertAdjacentElement('afterend', btnUserProfile);
+  
+}
+function signOutCompletely() {
+  btnSignOut.style.display = 'none';
+  btnUserProfile.firstElementChild.style.display = 'flex';
+  btnUserProfile.firstElementChild.nextElementSibling.style.display = 'none';
+  btn.style.display = 'flex';
+  btn.removeEventListener('click',showLogOut);
+  btn.addEventListener('click',signUpClick);
+}
+
+
+
+
+
+
