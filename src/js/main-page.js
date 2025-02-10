@@ -136,7 +136,8 @@ async function categoryList(category) {
     let html = '';
 
     categoryData.forEach(book => {
-      html += `
+      if (book.book_image) {
+        html += `
           <li class="category_list-card">
               <div class="top_list-book_cover_wrapper" data-bookid="${book._id}">
                   <img class="top_list-book_cover" src="${book.book_image}" alt="${book.title}">
@@ -145,6 +146,7 @@ async function categoryList(category) {
               <p class="top_list-book_author">${book.author}</p>
           </li>
           `;
+      }
     });
 
     html += `<p class="all_categories"</p>`;
