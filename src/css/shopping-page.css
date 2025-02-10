@@ -1,7 +1,6 @@
 /* Sadece mobil için */
 .ctg-support-ukr {
   visibility: hidden;
-  display: none;
   height: 0;
 }
 .shopping-list-title {
@@ -10,10 +9,9 @@
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -4%;
-  color: black;
+  /* color: black; */
   display: flex;
   justify-content: start;
-  display: flex;
   gap: 10px;
   margin: 20px;
 }
@@ -21,17 +19,23 @@
   color: rgba(79, 46, 232, 1);
 }
 .empty-list {
-  width: 265px;
-  height: 248px;
+  /* width: 265px;
+  height: 248px; */
   margin-left: 55px;
-  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
 }
 .empty-text {
   font-family: 'DM Sans', serif;
+  /* width: 244px; */
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -2%;
+  display: flex;
+  text-align: center;
   align-items: center;
   color: rgba(0, 0, 0, 0.6);
   padding-bottom: 14px;
@@ -47,7 +51,7 @@
   height: 170px;
   margin: 18px 20px;
   border: 2px solid rgba(76, 46, 232, 0.4);
-  color: white;
+  /* color: white; */
   padding: 30px 24px;
   display: flex;
   border-radius: 16px;
@@ -59,6 +63,8 @@
   /* width: 100px; */
   height: 142px;
   border-radius: 8px;
+  /* display: flex;
+  align-items: center; */
   /* position: absolute; */
   left: 8px;
   top: 8px;
@@ -75,18 +81,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  /* position: absolute; */
+  /* position: absolute;
   top: 0;
-  /* width: 215px; */
-  right: 0;
+  width: 215px;
+  right: 0; */
 }
 .book-info h3 {
-  font-family: 'DM Sans', serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
   letter-spacing: -4%;
-  color: rgba(17, 17, 17, 1);
   position: absolute;
   top: 10px;
   white-space: nowrap; /* Alt satıra geçmesini engeller */
@@ -96,7 +100,6 @@
 }
 
 .category {
-  font-family: 'DM Sans', serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
@@ -106,22 +109,22 @@
   position: absolute;
   top: 30px;
 }
+
 .description {
-  font-family: 'DM Sans', serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -4%;
-  color: rgba(17, 17, 17, 1);
-  display: -webkit-box; /* Bu kısım önemli */
-  -webkit-line-clamp: 3; /* 2 satır gösterilecek */
-  -webkit-box-orient: vertical; /* Dikey düzen */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  position: absolute;
-  bottom: 60px;
+  text-overflow: ellipsis;
+  position: relative;
+  top: 60px;
 }
+
 .author {
-  font-family: 'DM Sans', serif;
   font-weight: 400;
   font-style: italic;
   font-size: 12px;
@@ -143,16 +146,12 @@
   width: 28px;
   height: 28px;
 }
-.buy-button {
-  /* margin-left: 350px;
-    margin-top: 30px;
-    width: 56px;
-    height: 16px; */
+.amazon-icon {
   position: absolute;
   right: 0; /* Sol kenara yasla */
   bottom: 0; /* Alt kenara yasla */
   padding: 10px;
-  /* bottom: 10px; */
+  width: 56px;
 }
 
 .pagination {
@@ -184,236 +183,133 @@
 }
 
 @media screen and (min-width: 768px) {
-  .ctg-support-ukr {
-    visibility: hidden;
-    display: none;
-    height: 0;
-  }
   .shopping-list-title {
-    font-family: 'DM Sans', serif;
-    font-weight: 700;
     font-size: 48px;
     line-height: 52px;
-    letter-spacing: -4%;
-    color: black;
-    display: flex;
-    justify-content: start;
-    margin: 25px;
-    display: flex;
     gap: 10px;
   }
+
   .shopping-list-title span {
-    color: rgba(79, 46, 232, 1);
-    font-family: 'DM Sans', serif;
     font-size: 48px;
-    font-weight: 700;
     line-height: 52px;
-    letter-spacing: -4%;
   }
-  .books-section {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-  }
+
+
   .empty-list {
     width: 349px;
     height: 309px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    display: flex;
+    align-items: center;
   }
   .empty-text {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-    letter-spacing: -2%;
-    align-items: center;
-    color: rgba(0, 0, 0, 0.6);
     padding-bottom: 14px;
   }
+
   .books-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
   }
+
   .book-card {
     display: flex;
-    gap: 10px;
-    width: 704px;
+    width: 100%;
     height: 213px;
-    border-radius: 16px;
-    border: 2px solid rgba(79, 46, 232, 0.4);
-    padding: 30px 24px 30px 24px;
   }
+
   .book-cover {
     width: 116px;
     height: 165px;
     border-radius: 8px;
   }
+
   .book-info {
     display: flex;
     flex-direction: column;
-    position: relative;
-    justify-content: space-evenly;
-    align-items: start;
     gap: 10px;
+    height: 100%;
   }
-  .delete-btn {
-    position: absolute;
-    right: -20px;
-    top: -20px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(79, 46, 232, 1);
-    color: white;
-    font-size: 18px;
-  }
+
   .book-info h3 {
-    font-family: 'DM Sans', serif;
-    font-weight: 700;
+    margin-top: 8px;
     font-size: 16px;
     line-height: 18px;
-    letter-spacing: -4%;
   }
   .category {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
+    margin-top: 8px;
     font-size: 12px;
     line-height: 14px;
-    letter-spacing: 3%;
-    color: rgba(180, 175, 175, 1);
   }
   .description {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: -4%;
-    color: rgba(17, 17, 17, 1);
-    width: 508px;
   }
   .author {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
-    font-style: italic;
     font-size: 12px;
     line-height: 14px;
-    letter-spacing: -4%;
-    color: rgba(180, 175, 175, 1);
-  }
-  .buy-button {
-    position: absolute;
-    right: -10px;
-    bottom: 0px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+.shopping-container {
+  display: flex;
+gap: 50px;
+}
+
+  .ctg-support-ukr {
+    visibility: visible;
+    height: 474px;
+  }
+
   .shopping-list-title {
-    font-family: 'DM Sans', serif;
-    font-weight: 700;
     font-size: 48px;
     line-height: 52px;
-    letter-spacing: -4%;
-    color: black;
-    display: flex;
-    justify-content: start;
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
   }
   .shopping-list-title span {
-    color: rgba(79, 46, 232, 1);
-    font-family: 'DM Sans', serif;
     font-size: 48px;
-    font-weight: 700;
     line-height: 52px;
-    letter-spacing: -4%;
   }
-  .books-container {
-    display: flex;
-    flex-direction: column;
-    width: 996px;
-    gap: 20px;
-  }
-  .book-card {
-    width: 100%;
-    display: flex;
-    height: 213px;
-    border-radius: 16px;
-    gap: 48px;
-    border: 2px solid rgba(76, 46, 232, 0.4);
-    align-items: center;
+  /* .books-container {
+    top: 0px;
+    display: inline-block;
     position: relative;
+  } */
+  .book-card {
+    display: flex;
+    gap: 48px;
+    height: 213px;
   }
+
   .book-cover {
+    margin-right: -35px;
     width: 116px;
     height: 165px;
     border-radius: 8px;
-    margin-left: 10px;
   }
-  .book-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+
   .delete-btn {
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(76, 46, 232, 1);
-    color: white;
-    font-size: 24px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
+    font-size: 20px;
+    width: 34px;
+    height: 34px;
   }
+
   .book-info h3 {
-    font-family: 'DM Sans', serif;
-    font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    letter-spacing: -4%;
-    color: black;
-    top: 20px;
-    position: absolute;
   }
   .category {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    letter-spacing: 3%;
-    color: rgba(180, 175, 175, 1);
-    position: absolute;
-    top: 40px;
+    margin-top: 12px;
   }
   .description {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: -4%;
-    color: black;
-    position: absolute;
-    top: 80px;
   }
   .author {
-    font-family: 'DM Sans', serif;
-    font-weight: 400;
-    font-style: italic;
     font-size: 12px;
     line-height: 14px;
-    letter-spacing: -4%;
-    color: rgba(180, 175, 175, 1);
-    position: absolute;
-    bottom: 15px;
-  }
-  .buy-button {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
   }
 }
