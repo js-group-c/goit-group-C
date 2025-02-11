@@ -50,9 +50,10 @@ body.dark-mode {
   display: flex;
   text-align: center;
   align-items: center;
-  color: rgba(0, 0, 0, 0.6);
+
   padding-bottom: 14px;
 }
+
 /* EMPTY PAGE is END */
 .books-container {
   display: flex;
