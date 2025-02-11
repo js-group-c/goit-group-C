@@ -150,6 +150,19 @@
     text-decoration-thickness: Auto;
     color: var(--violet);
   }
+  a#btn-sign-out {
+    display: none;
+  }
+  svg.btn-sign-out {
+    position: relative;
+    right: -40px;
+  }
+  svg.btn-log-out {
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    cursor: pointer;
+  }
 }
 
 /* Tablet */
