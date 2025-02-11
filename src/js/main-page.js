@@ -136,7 +136,8 @@ async function categoryList(category) {
     let html = '';
 
     categoryData.forEach(book => {
-      html += `
+      if (book.book_image) {
+        html += `
           <li class="category_list-card">
               <div class="top_list-book_cover_wrapper" data-bookid="${book._id}">
                   <img class="top_list-book_cover" src="${book.book_image}" alt="${book.title}">
@@ -145,9 +146,10 @@ async function categoryList(category) {
               <p class="top_list-book_author">${book.author}</p>
           </li>
           `;
+      }
     });
 
-    html += `<p class="end_categories">End</p>`;
+    html += `<p class="all_categories"</p>`;
     references.categoryListElem.innerHTML = html;
   } catch (error) {
     console.error('Kategori verisi alınırken hata oluştu:', error);
@@ -191,7 +193,7 @@ function allCategoriesActive(category) {
 
 //Sayfa en alta kaydırıldığında seçilen kategoriye ait kitap yoksa bu kategoride kitap bulunmamaktadır uyarısı verir.
 function scrollHandler() {
-  const endCategories = document.querySelector('.end_categories');
+  const endCategories = document.querySelector('.all_categories');
   if (endCategories) {
     const endCatPosition = endCategories.getBoundingClientRect(); //Konum alınır.
     const windowHeight = window.innerHeight; //Kullanıcının görünür pencere yükseliğini alır.

@@ -30,12 +30,16 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+   /* Dark modda hover rengini sarı yap */
+   .dark-mode #categories li.ctg:hover {
+    color: #EAC645 !important;
+   }
 }
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   div.div-cat {
-    width: 98%;
+    width: 48%;
     height: 472px;
     top: 112px;
     left: 32px;
@@ -43,7 +47,9 @@
     opacity: 0px;
     overflow: scroll;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    float:left;
+    
   }
   #categories li.ctg {
     font-family: var(--dmsans);
@@ -65,6 +71,10 @@
     color: #4f2ee8;
     text-transform: uppercase;
     font-weight: 700;
+  }
+  /* Dark modda hover rengini sarı yap */
+  .dark-mode #categories li.ctg:hover {
+   color: #EAC645 !important;
   }
 }
 
@@ -100,4 +110,8 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+   /* Dark modda hover rengini sarı yap */
+   .dark-mode #categories li.ctg:hover {
+    color: #EAC645 !important;
+   }
 }
