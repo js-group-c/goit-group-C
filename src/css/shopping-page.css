@@ -225,6 +225,7 @@ body.dark-mode {
   .empty-list {
     width: 349px;
     height: 309px;
+    margin-left: 30%;
     display: flex;
     align-items: center;
   }
@@ -303,11 +304,15 @@ gap: 50px;
     display: inline-block;
     position: relative;
   } */
+
+  .empty-list {
+    margin-left: 50%;
+  }
   .book-card {
     display: flex;
     gap: 48px;
     height: 213px;
-    min-width: 996px;
+    width: 996px;
   }
 
   .book-cover {
