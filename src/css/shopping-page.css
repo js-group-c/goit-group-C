@@ -50,9 +50,10 @@ body.dark-mode {
   display: flex;
   text-align: center;
   align-items: center;
-  color: rgba(0, 0, 0, 0.6);
+
   padding-bottom: 14px;
 }
+
 /* EMPTY PAGE is END */
 .books-container {
   display: flex;
@@ -225,6 +226,7 @@ body.dark-mode {
   .empty-list {
     width: 349px;
     height: 309px;
+    margin-left: 30%;
     display: flex;
     align-items: center;
   }
@@ -303,11 +305,15 @@ gap: 50px;
     display: inline-block;
     position: relative;
   } */
+
+  .empty-list {
+    margin-left: 50%;
+  }
   .book-card {
     display: flex;
     gap: 48px;
     height: 213px;
-    min-width: 996px;
+    width: 996px;
   }
 
   .book-cover {
