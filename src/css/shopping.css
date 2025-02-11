@@ -4,6 +4,7 @@
 @import url('./shopping-page.css');
 @import url('./sign-up.css');
 @import url('./support-ukr.css');
+@import url('./modal.css');
 
 
 :root {
@@ -17,7 +18,7 @@
     --dmsans: "DM Sans", sans-serif;
     --linear-gradiant: linear-gradient(180deg, #060707 0%, #1d1d1d 100%);
   }
-  /* Reset css */
+  Reset css
   html {
     box-sizing: border-box;
     font-family: var(--dmsans);
