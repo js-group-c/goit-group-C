@@ -1,4 +1,6 @@
 import { all } from 'axios';
+import { darkModal } from './modal.js';
+import { lightModal } from './modal.js';
 
 var modal = document.getElementById('login-modal');
 var btn = document.getElementById('btn-sign-up');
@@ -116,6 +118,8 @@ function signUp() {
   }
 }
 function toggleMode() {
+  
+  
   var svg = document.querySelector('svg.swicther-2-svg');
   var header = document.querySelector('header.header');
   var navLogoTxt = document.querySelector('svg.nav-logo-txt');
@@ -135,7 +139,8 @@ function toggleMode() {
   var closeModal = document.querySelector('div.close-modal');
 
   if (svg.innerHTML.includes(`Switcher-2@2x.svg#switcher2`)) {
-    svg.innerHTML = `<use href="img/SwitcherDark@2x.svg#switcherDark"></use>`;
+    darkModal(); // Modal.js ten darkModal fonksiyonu çağırdım.
+    svg.innerHTML = `<use href="../img/SwitcherDark@2x.svg#switcherDark"></use>`;
     header.style.backgroundColor = 'var(--black)';
     header.style.border = ' 1.5px solid #FFFFFF';
     navLogoTxt.style.filter = 'brightness(0) invert(1)';
@@ -167,7 +172,8 @@ function toggleMode() {
     });
     closeModal.style.color = 'var(--white)';
   } else {
-    svg.innerHTML = `<use href="img/Switcher-2@2x.svg#switcher2"></use>`;
+    lightModal(); // Modal.js ten lightmodal fonksiyonu çağırdım.
+    svg.innerHTML = `<use href="../img/Switcher-2@2x.svg#switcher2"></use>`;
     header.style.backgroundColor = 'var(--white)';
     header.style.border = ' 1.5px solid #111111';
     navLogoTxt.style.filter = '';
@@ -199,6 +205,7 @@ function toggleMode() {
     });
     closeModal.style.color = 'var(--black)';
   }
+
 }
 function createUserProfile(username) {
   
