@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-group-C/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/goit-group-C/assets/logo-CYGzfpq8.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoIT Bookshelf Javascript Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,7 +15,7 @@
     <link rel="modulepreload" crossorigin href="/goit-group-C/assets/vendor-C2dPOmMF.js">
     <link rel="modulepreload" crossorigin href="/goit-group-C/assets/support-ukr-DM50oc6P.js">
     <link rel="stylesheet" crossorigin href="/goit-group-C/assets/vendor-D_nxXpU-.css">
-    <link rel="stylesheet" crossorigin href="/goit-group-C/assets/shopping-xoS9Ge52.css">
+    <link rel="stylesheet" crossorigin href="/goit-group-C/assets/shopping-C-YGGltF.css">
   </head>
   <body>
     <!-- Loads the specified .html file -->
@@ -179,7 +179,7 @@
       This page is empty, add some books and proceed to order.
     </p>
     <img
-      src="../img/empty-list.png"
+      src="../img/empty.svg"
       alt="Empty shopping list"
       class="empty-image"
     />
@@ -188,6 +188,28 @@
 </section>
 </div>
 
+      
+<!-- Modal Window (Başlangıçta gizli) -->
+<div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-container">
+        <img class="modalImage" src="" alt="Kitap Kapak Resmi" />
+        <div class="modal-text-container">
+          <h2 class="modalTitle"></h2>
+          <p class="modalAuthor"></p>
+          <p class="modalDescription"></p>
+          <ul class="modalBuyLinks"></ul>
+        </div>
+      </div>
+      <button class="addToShoppingList">ADD TO SHOOPING LIST</button>
+      <button class="removeFromShoppingList">REMOVE FROM THE SHOPPING LIST</button>
+      <div class="feedback-div">
+        <p class="feedback-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+      </div>
+    </div>
+  </div>
+  
     </div>
     </main>
   </body>
