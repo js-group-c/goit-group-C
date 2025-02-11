@@ -6,7 +6,7 @@ import{g as u}from"./assets/support-ukr-DM50oc6P.js";import"./assets/vendor-C2dP
         <p class="category">${s.list_name}</p>
         <p class="description">${s.description}</p>
         <p class="author">${s.author}</p>
-        <a href="${s.buy_links[0].url}" target="_blank" class="buy-button"><img src="img/amazon.svg" alt="icon" class="amazon-icon"></a>
+        <a href="${s.buy_links[0].url}" target="_blank" class="buy-button"><img src="./img/amazon.svg" alt="icon" class="amazon-icon"></a>
       </div>
     `,c.appendChild(l)})}function g(){const t=Math.ceil(i.length/r),n=document.getElementById("pagination-container");if(n.innerHTML="",!(t<=1)){n.innerHTML+=`
     <button class="pagination-btn first-page" ${e===1?"disabled":""}>⏮</button>
