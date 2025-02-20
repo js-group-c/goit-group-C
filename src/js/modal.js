@@ -22,12 +22,12 @@ let currentBookId = null;
 
 // Logo eşleştirme için bir nesne
 const storeLogos = {
-  Amazon: '../img/png/Amazon_logo.png',
-  'Apple Books': '../img/png/apple-books.png',
-  'Barnes and Noble': '../img/png/barnes-noblepng.png',
-  'Books-A-Million': '../img/png//books-a-million.png',
-  Bookshop: '../img/png/bookshop.png',
-  IndieBound: '../img/png/indie-bound.png',
+  Amazon: 'img/png/Amazon_logo.png',
+  'Apple Books': 'img/png/apple-books.png',
+  'Barnes and Noble': 'img/png/barnes-noblepng.png',
+  'Books-A-Million': 'img/png//books-a-million.png',
+  Bookshop: 'img/png/bookshop.png',
+  IndieBound: 'img/png/indie-bound.png',
 };
 
 // Modalı açma fonksiyonu
