@@ -140,7 +140,7 @@ function toggleMode() {
 
   if (svg.innerHTML.includes(`Switcher-2@2x.svg#switcher2`)) {
     darkModal(); // Modal.js ten darkModal fonksiyonu çağırdım.
-    svg.innerHTML = `<use href="../img/SwitcherDark@2x.svg#switcherDark"></use>`;
+    svg.innerHTML = `<use href="img/SwitcherDark@2x.svg#switcherDark"></use>`;
     header.style.backgroundColor = 'var(--black)';
     header.style.border = ' 1.5px solid #FFFFFF';
     navLogoTxt.style.filter = 'brightness(0) invert(1)';
@@ -173,7 +173,7 @@ function toggleMode() {
     closeModal.style.color = 'var(--white)';
   } else {
     lightModal(); // Modal.js ten lightmodal fonksiyonu çağırdım.
-    svg.innerHTML = `<use href="../img/Switcher-2@2x.svg#switcher2"></use>`;
+    svg.innerHTML = `<use href="img/Switcher-2@2x.svg#switcher2"></use>`;
     header.style.backgroundColor = 'var(--white)';
     header.style.border = ' 1.5px solid #111111';
     navLogoTxt.style.filter = '';
