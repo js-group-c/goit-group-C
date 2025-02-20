@@ -13,9 +13,9 @@ function slide() {
 }
 function changeIcon() {
     if (icon.src.includes("/slider.svg#slider")) {
-        icon.src = "../img/blocks/sliderUp.svg#sliderUp";
+        icon.src = "img/blocks/sliderUp.svg#sliderUp";
     } else {
-        icon.src = "../img/blocks/slider.svg#slider";
+        icon.src = "img/blocks/slider.svg#slider";
     }
 }
 function showHide3() {
