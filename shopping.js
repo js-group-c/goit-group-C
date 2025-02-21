@@ -5,7 +5,7 @@ import{g as u}from"./assets/support-ukr-J0-nDD3z.js";import"./assets/vendor-C2dP
         <h3>${s.title}</h3>
         <p class="category">${s.list_name}</p>
         <p class="description">${s.description}</p>
-        <p class="author">${s.author}</p>
+        <p class="author">${s.author}</p>    
         <a href="${s.buy_links[0].url}" target="_blank" class="buy-button"><img src="/public/img/amazon.svg" alt="icon" class="amazon-icon"></a>
       </div>
     `,c.appendChild(r)})}function g(){const t=Math.ceil(i.length/l),n=document.getElementById("pagination-container");if(n.innerHTML="",!(t<=1)){n.innerHTML+=`
