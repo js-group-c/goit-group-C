@@ -1,4 +1,4 @@
-import{g as u}from"./assets/support-ukr-J0-nDD3z.js";import"./assets/vendor-C2dPOmMF.js";let i=JSON.parse(localStorage.getItem("shoppingList"))||[];const c=document.getElementById("book-container"),d=document.querySelector(".empty-list");let r=4,e=1;async function o(){if(i.length===0){d.style.display="block",c.innerHTML="",g();return}else d.style.display="none";c.innerHTML="";const t=i.filter(n=>n!=null&&n!=="");if(t.length===0){d.style.display="block",c.innerHTML="",g();return}try{const n=await u(t);b(n),g()}catch(n){console.error("Error",n)}}function b(t){c.innerHTML="";const n=(e-1)*r,a=n+r;t.slice(n,a).forEach((s,p)=>{const l=document.createElement("div");l.classList.add("book-card"),l.setAttribute("data-index",p+1),l.innerHTML=`
+import{g as u}from"./assets/support-ukr-J0-nDD3z.js";import"./assets/vendor-C2dPOmMF.js";let i=JSON.parse(localStorage.getItem("shoppingList"))||[];const c=document.getElementById("book-container"),d=document.querySelector(".empty-list"),b={Amazon:"img/amazon.svg"};let r=4,e=1;async function o(){if(i.length===0){d.style.display="block",c.innerHTML="",g();return}else d.style.display="none";c.innerHTML="";const t=i.filter(n=>n!=null&&n!=="");if(t.length===0){d.style.display="block",c.innerHTML="",g();return}try{const n=await u(t);m(n),g()}catch(n){console.error("Error",n)}}function m(t){c.innerHTML="";const n=(e-1)*r,a=n+r;t.slice(n,a).forEach((s,p)=>{const l=document.createElement("div");l.classList.add("book-card"),l.setAttribute("data-index",p+1),l.innerHTML=`
       <img src="${s.book_image}" alt="${s.title}" class="book-cover">
       <div class="book-info">
         <button class="delete-btn" data-id="${s._id}">&#128465;</button>
@@ -6,7 +6,7 @@ import{g as u}from"./assets/support-ukr-J0-nDD3z.js";import"./assets/vendor-C2dP
         <p class="category">${s.list_name}</p>
         <p class="description">${s.description}</p>
         <p class="author">${s.author}</p>    
-        <a href="${s.buy_links[0].url}" target="_blank" class="buy-button"><img src="/img/amazon.svg" alt="icon" class="amazon-icon"></a>
+        <a href="${s.buy_links[0].url}" target="_blank" class="buy-button"><img src="${b.Amazon}"  alt="icon" class="amazon-icon"></a>
       </div>
     `,c.appendChild(l)})}function g(){const t=Math.ceil(i.length/r),n=document.getElementById("pagination-container");if(n.innerHTML="",!(t<=1)){n.innerHTML+=`
     <button class="pagination-btn first-page" ${e===1?"disabled":""}>⏮</button>
