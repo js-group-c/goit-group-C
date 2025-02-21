@@ -45,8 +45,8 @@ function displayBooks(books) {
         <h3>${book.title}</h3>
         <p class="category">${book.list_name}</p>
         <p class="description">${book.description}</p>
-        <p class="author">${book.author}</p>
-        <a href="${book.buy_links[0].url}" target="_blank" class="buy-button"><img src="./public/img/amazon.svg" alt="icon" class="amazon-icon"></a>
+        <p class="author">${book.author}</p>    
+        <a href="${book.buy_links[0].url}" target="_blank" class="buy-button"><img src="/public/img/amazon.svg" alt="icon" class="amazon-icon"></a>
       </div>
     `;
     booksContainer.appendChild(bookCard);
