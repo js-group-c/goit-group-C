@@ -3,6 +3,7 @@ body {
   background-color: white;
   color: black;
   transition: 0.3s, color 0.3s;
+  font-family: 'DM Sans', serif;
 }
 
 /* Dark Mode */
@@ -79,7 +80,6 @@ body.dark-mode {
   /* display: flex;
   align-items: center; */
   /* position: absolute; */
-  
 }
 .book-info {
   height: 142px;
@@ -162,9 +162,31 @@ body.dark-mode {
   right: 0; /* Sol kenara yasla */
   bottom: 0; /* Alt kenara yasla */
   padding: 10px;
-  width: 56px;
   color:#121212;
+  width: 100px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
+
+.amazon-icon-dark {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  width: 100px;
+}
+
+.dark-mode .amazon-icon {
+  display: none;
+}
+
+.dark-mode .amazon-icon-dark {
+  display: inline;
+}
+
+
+
 
 .pagination {
   margin-top: 10px;
@@ -219,7 +241,6 @@ body.dark-mode {
     line-height: 52px;
   }
 
-
   .empty-list {
     width: 349px;
     height: 309px;
@@ -241,7 +262,7 @@ body.dark-mode {
 
   .book-card {
     display: flex;
-   width: 704px;
+    width: 704px;
     height: 170px;
   }
 
@@ -277,17 +298,13 @@ body.dark-mode {
     font-size: 12px;
     line-height: 14px;
   }
-
-  .amazon-icon {
-    width: 115px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
-.shopping-container {
-  display: flex;
-gap: 50px;
-}
+  .shopping-container {
+    display: flex;
+    gap: 50px;
+  }
 
   .ctg-support-ukr {
     visibility: visible;
@@ -343,6 +360,7 @@ gap: 50px;
   .description {
     font-size: 14px;
     line-height: 18px;
+    font-weight: 500;
   }
   .author {
     font-size: 12px;
