@@ -11,7 +11,6 @@ body.dark-mode {
   color: white;
 }
 
-
 .ctg-support-ukr {
   visibility: hidden;
   height: 0;
@@ -62,7 +61,7 @@ body.dark-mode {
 }
 .book-card {
   /* width: 335px; */
-  height: 170px;
+  height: 150px;
   margin: 18px 20px;
   border: 2px solid rgba(76, 46, 232, 0.4);
   /* color: white; */
@@ -74,17 +73,16 @@ body.dark-mode {
   position: relative;
 }
 .book-cover {
-  /* width: 100px; */
+  width: 100px;
   height: 142px;
   border-radius: 8px;
   /* display: flex;
   align-items: center; */
   /* position: absolute; */
-  left: 8px;
-  top: 8px;
+  
 }
 .book-info {
-  height: 170px;
+  height: 142px;
   align-items: start;
   justify-content: start;
   text-align: start;
@@ -105,12 +103,12 @@ body.dark-mode {
   font-size: 16px;
   line-height: 18px;
   letter-spacing: -4%;
-  position: absolute;
+  /* position: absolute; */
   top: 10px;
   white-space: nowrap; /* Alt satıra geçmesini engeller */
   overflow: hidden; /* Taşan kısmı gizler */
   text-overflow: ellipsis;
-  max-width: 50%;
+  max-width: 80%;
 }
 
 .category {
@@ -120,8 +118,7 @@ body.dark-mode {
   letter-spacing: 3%;
   color: rgba(180, 175, 175, 1);
   width: 193px;
-  position: absolute;
-  top: 30px;
+  padding-top: 8px;
 }
 
 .description {
@@ -135,7 +132,7 @@ body.dark-mode {
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
-  top: 60px;
+  padding-top: 8px;
 }
 
 .author {
@@ -145,8 +142,8 @@ body.dark-mode {
   line-height: 14px;
   letter-spacing: -4%;
   color: rgba(180, 175, 175, 1);
-  position: absolute;
-  bottom: 10px;
+  /* position: absolute; */
+  margin-top: 10px;
 }
 .delete-btn {
   position: absolute;
@@ -157,7 +154,7 @@ body.dark-mode {
   color: white;
   border: none;
   font-size: 16px;
-  width: 28px;
+  width: 20px;
   height: 28px;
 }
 .amazon-icon {
@@ -244,8 +241,8 @@ body.dark-mode {
 
   .book-card {
     display: flex;
-    width: 100%;
-    height: 213px;
+   width: 704px;
+    height: 170px;
   }
 
   .book-cover {
@@ -262,12 +259,13 @@ body.dark-mode {
   }
 
   .book-info h3 {
+    max-width: 100%;
     margin-top: 8px;
     font-size: 16px;
     line-height: 18px;
   }
   .category {
-    margin-top: 8px;
+    /* margin-top: 8px; */
     font-size: 12px;
     line-height: 14px;
   }
@@ -312,7 +310,7 @@ gap: 50px;
   .book-card {
     display: flex;
     gap: 48px;
-    height: 213px;
+    height: 170px;
     width: 996px;
   }
 
@@ -336,7 +334,7 @@ gap: 50px;
   .category {
     font-size: 12px;
     line-height: 14px;
-    margin-top: 12px;
+    /* margin-top: 12px; */
   }
   .description {
     font-size: 14px;
