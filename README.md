@@ -23,7 +23,7 @@ experience more enjoyable in the digital environment.
 
 - **Team Lead:**
   - [Can İpek](https://github.com/ipekcan)
--  **Scrum Master:**
+- **Scrum Master:**
   - [Nilay Türker](https://github.com/nilaytr)
 - **Developers:**
   - [Batuhan Gözcü](https://github.com/batuhangozcu)
