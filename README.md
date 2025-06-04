@@ -1,4 +1,4 @@
-# Bookshelf Project
+# 📚 Bookshelf Project
 
 Welcome to the Bookshelf project, developed by students of the GoIT School Full
 Stack Web Development course. Bookshelf is a modern web application designed for
@@ -7,7 +7,7 @@ project allows users to explore books, browse by categories, and create a
 shopping list. This project has been developed to make the book reading
 experience more enjoyable in the digital environment.
 
-## Features
+## 🔐 Features
 
 - Best-Sellers Books: Browse popular books and view their details.
 - Category Filtering: Easily discover books by different genres.
@@ -19,12 +19,15 @@ experience more enjoyable in the digital environment.
   desktop, tablet, and mobile.
 - Fast and Optimized: High performance and fast loading times thanks to Vite.
 
-## Team Members
+## 👥 Team Members
 
-- [Can İpek](https://github.com/ipekcan)
-- [Nilay Türker](https://github.com/nilaytr)
-- [Batuhan Gözcü](https://github.com/batuhangozcu)
-- [Serhat Genç](https://github.com/GencSerhat)
-- [Emre Soyaltın](https://github.com/emresoyaltin)
-- [Dilara Ekinci](https://github.com/dreamer981)
-- [Mehmet Menekşe](https://github.com/nicolamenekse)
+- **Team Lead:**
+  - [Can İpek](https://github.com/ipekcan)
+-  **Scrum Master:**
+  - [Nilay Türker](https://github.com/nilaytr)
+- **Developers:**
+  - [Batuhan Gözcü](https://github.com/batuhangozcu)
+  - [Serhat Genç](https://github.com/GencSerhat)
+  - [Emre Soyaltın](https://github.com/emresoyaltin)
+  - [Dilara Ekinci](https://github.com/dreamer981)
+  - [Mehmet Menekşe](https://github.com/nicolamenekse)
